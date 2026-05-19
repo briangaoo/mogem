@@ -569,13 +569,11 @@ function PodiumColumn({
       <div className="flex w-full min-w-0 flex-col items-center gap-1.5 px-1 text-center">
         {children}
       </div>
-      {/* Podium platform — mystical/magical treatment. Hard 1px stripe
-          + diagonal hatch are gone (Brian called those "horizontal
-          lines"). Replaced with: a soft medal-tinted halo spilling
-          from the top edge, a small constellation of twinkling stars
-          scattered inside, and the existing shimmer sweep on 1st.
-          Body gradient + medal border carry the gold/silver/bronze
-          identity. */}
+      {/* Podium platform. Hard 1px stripe + diagonal hatch are gone
+          (Brian called those "horizontal lines"). What's left: a soft
+          medal-tinted halo spilling from the top edge, plus the
+          existing shimmer sweep on 1st. Body gradient + medal border
+          carry the gold/silver/bronze identity. */}
       <div
         className={`relative mt-3 flex w-full items-center justify-center overflow-hidden rounded-t-xl border-2 ${theme.borderColor} ${theme.bgGradient} ${theme.platformHeight} transition-colors duration-300 group-hover:brightness-110`}
       >
@@ -589,13 +587,6 @@ function PodiumColumn({
             background: `radial-gradient(ellipse 80% 100% at 50% 0%, ${theme.accent}88 0%, transparent 70%)`,
           }}
         />
-        {/* Inner constellation — small twinkling stars scattered
-            inside the platform. Same motif as the home-page
-            Starfield + the profile-banner default. Positions are
-            hand-tuned for the platform aspect; size + colour
-            varies slightly so the field reads layered, not
-            uniform. */}
-        <PodiumConstellation rank={rank} accent={theme.accent} />
         {/* Slow shimmer sweep — 1st place only. */}
         {isFirst && (
           <span
@@ -610,111 +601,6 @@ function PodiumColumn({
         </span>
       </div>
     </Link>
-  );
-}
-
-/**
- * Inner constellation rendered behind the big rank numeral on each
- * podium platform. Small mix of white + medal-tinted twinkling dots
- * positioned by percent so the layout adapts to the three platform
- * heights without re-tuning. Half the dots twinkle slowly via the
- * shared `banner-star-twinkle` keyframe; the rest stay static so the
- * field reads layered.
- *
- * 1st place gets more stars + brighter ones to reinforce the "biggest
- * stage" cue. Twinkle durations are intentionally desynced so adjacent
- * stars pulse at different beats.
- */
-type ConstellationStar = {
-  x: number;
-  y: number;
-  size: number;
-  /** When true, uses the medal accent instead of white. */
-  medal?: boolean;
-  /** Pulse opacity between min ↔ max over `dur` seconds. */
-  twinkle?: { min: number; max: number; dur: number };
-};
-
-const PODIUM_CONSTELLATIONS: Record<1 | 2 | 3, ConstellationStar[]> = {
-  1: [
-    { x: 12, y: 22, size: 1.5, twinkle: { min: 0.35, max: 0.95, dur: 4.2 } },
-    { x: 22, y: 60, size: 2, medal: true, twinkle: { min: 0.5, max: 1, dur: 3.6 } },
-    { x: 8, y: 78, size: 1 },
-    { x: 30, y: 38, size: 1 },
-    { x: 38, y: 80, size: 1.5, twinkle: { min: 0.4, max: 0.9, dur: 5.1 } },
-    { x: 50, y: 18, size: 1, medal: true },
-    { x: 62, y: 70, size: 1.5, twinkle: { min: 0.4, max: 0.85, dur: 3.9 } },
-    { x: 72, y: 30, size: 2, twinkle: { min: 0.55, max: 1, dur: 4.6 } },
-    { x: 80, y: 86, size: 1 },
-    { x: 88, y: 44, size: 1.5, medal: true, twinkle: { min: 0.45, max: 0.95, dur: 3.3 } },
-    { x: 94, y: 76, size: 1 },
-  ],
-  2: [
-    { x: 14, y: 28, size: 1.5, twinkle: { min: 0.4, max: 0.9, dur: 4.0 } },
-    { x: 24, y: 72, size: 1 },
-    { x: 38, y: 38, size: 2, medal: true, twinkle: { min: 0.5, max: 1, dur: 3.4 } },
-    { x: 50, y: 80, size: 1.5 },
-    { x: 62, y: 22, size: 1, medal: true },
-    { x: 76, y: 64, size: 1.5, twinkle: { min: 0.4, max: 0.95, dur: 5.2 } },
-    { x: 88, y: 32, size: 1 },
-    { x: 92, y: 82, size: 1.5, twinkle: { min: 0.45, max: 0.9, dur: 4.4 } },
-  ],
-  3: [
-    { x: 16, y: 30, size: 1.5, twinkle: { min: 0.4, max: 0.9, dur: 4.1 } },
-    { x: 30, y: 70, size: 1, medal: true },
-    { x: 44, y: 28, size: 2, twinkle: { min: 0.5, max: 1, dur: 3.5 } },
-    { x: 58, y: 78, size: 1.5, medal: true, twinkle: { min: 0.45, max: 0.95, dur: 4.7 } },
-    { x: 72, y: 36, size: 1 },
-    { x: 86, y: 66, size: 1.5, twinkle: { min: 0.4, max: 0.9, dur: 5.0 } },
-  ],
-};
-
-function PodiumConstellation({
-  rank,
-  accent,
-}: {
-  rank: 1 | 2 | 3;
-  accent: string;
-}) {
-  return (
-    <div aria-hidden className="pointer-events-none absolute inset-0">
-      {PODIUM_CONSTELLATIONS[rank].map((s, i) => {
-        const color = s.medal ? accent : '#ffffff';
-        const baseStyle: React.CSSProperties = {
-          position: 'absolute',
-          left: `${s.x}%`,
-          top: `${s.y}%`,
-          width: s.size,
-          height: s.size,
-          borderRadius: '9999px',
-          backgroundColor: color,
-          marginLeft: -s.size / 2,
-          marginTop: -s.size / 2,
-          // Brighter stars + medal-coloured ones get a soft halo so
-          // the field reads layered, not as bullet points.
-          boxShadow:
-            s.size >= 1.5 || s.medal
-              ? `0 0 ${s.size * 2.4}px ${color}, 0 0 ${s.size * 4.4}px ${color}66`
-              : undefined,
-          opacity: s.twinkle ? s.twinkle.max : s.size >= 2 ? 0.95 : 0.6,
-        };
-        if (!s.twinkle) {
-          return <span key={i} style={baseStyle} />;
-        }
-        const vars = {
-          ['--twinkle-min' as never]: s.twinkle.min,
-          ['--twinkle-max' as never]: s.twinkle.max,
-          ['--twinkle-dur' as never]: `${s.twinkle.dur}s`,
-        } as React.CSSProperties;
-        return (
-          <span
-            key={i}
-            className="banner-star-twinkle"
-            style={{ ...baseStyle, ...vars }}
-          />
-        );
-      })}
-    </div>
   );
 }
 

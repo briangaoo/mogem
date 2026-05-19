@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Camera, Crown, Swords } from 'lucide-react';
 import { getTier } from '@/lib/tier';
+import { getScoreColor } from '@/lib/scoreColor';
 import type { LeaderboardRow } from '@/lib/supabase';
 import { writeLeaderboardCache } from '@/lib/leaderboardCache';
 import { AppHeader } from '@/components/AppHeader';
@@ -470,11 +471,11 @@ function InitialAvatar({ name }: { name: string }) {
 // same baseline so the "step up" visual reads correctly regardless
 // of how tall each column's header is.
 
-// Restrained palette: medal colour only lives on the 1px top stripe +
-// the big ghosted rank numeral inside the platform. Everything else
-// (border, body, score) reads as monochrome black-and-white. Brian's
-// note was "less vibrant, not no colour" — this isolates medal hue to
-// two narrow accent slots instead of flooding the whole platform.
+// Medal colour back to flooding the platform — body gradient, tinted
+// border, full-saturation rank numeral inside. The previous monochrome
+// pass was too quiet; this restores the gold/silver/bronze identity
+// across the whole platform so 1st reads as gold, 2nd as silver, 3rd
+// as bronze at a glance.
 const PODIUM_THEME: Record<
   1 | 2 | 3,
   {
@@ -483,6 +484,7 @@ const PODIUM_THEME: Record<
     avatarSize: number;
     scoreSize: string;
     nameSize: string;
+    bgGradient: string;
     borderColor: string;
     rankNumberColor: string;
   }
@@ -493,8 +495,10 @@ const PODIUM_THEME: Record<
     avatarSize: 108,
     scoreSize: 'text-3xl sm:text-5xl',
     nameSize: 'text-sm sm:text-base',
-    borderColor: 'border-white/30',
-    rankNumberColor: 'text-amber-200/35',
+    bgGradient:
+      'bg-gradient-to-b from-amber-500/45 via-amber-700/20 to-amber-950/65',
+    borderColor: 'border-amber-400/85',
+    rankNumberColor: 'text-amber-200/65',
   },
   2: {
     accent: '#e2e8f0',
@@ -502,8 +506,10 @@ const PODIUM_THEME: Record<
     avatarSize: 80,
     scoreSize: 'text-2xl sm:text-4xl',
     nameSize: 'text-[13px] sm:text-sm',
-    borderColor: 'border-white/25',
-    rankNumberColor: 'text-zinc-100/30',
+    bgGradient:
+      'bg-gradient-to-b from-zinc-200/35 via-zinc-500/15 to-zinc-950/65',
+    borderColor: 'border-zinc-200/65',
+    rankNumberColor: 'text-zinc-100/55',
   },
   3: {
     accent: '#fb923c',
@@ -511,8 +517,10 @@ const PODIUM_THEME: Record<
     avatarSize: 72,
     scoreSize: 'text-2xl sm:text-4xl',
     nameSize: 'text-[13px] sm:text-sm',
-    borderColor: 'border-white/20',
-    rankNumberColor: 'text-orange-200/30',
+    bgGradient:
+      'bg-gradient-to-b from-orange-500/40 via-orange-700/20 to-orange-950/65',
+    borderColor: 'border-orange-400/70',
+    rankNumberColor: 'text-orange-200/60',
   },
 };
 
@@ -561,14 +569,12 @@ function PodiumColumn({
       <div className="flex w-full min-w-0 flex-col items-center gap-1.5 px-1 text-center">
         {children}
       </div>
-      {/* Podium platform — 2px WHITE border (not medal-tinted), pure
-          black body. Medal colour is reserved for the 1px top stripe
-          + the big ghosted rank numeral inside, so the platform
-          reads monochrome with a single accent stroke at the top.
-          Rounded-top only so the row of three flows as a single
-          tiered stage. */}
+      {/* Podium platform — 2px medal-coloured border + full medal-tinted
+          body gradient. Top stripe + diagonal hatch sit on top as
+          structural details; shimmer sweeps 1st only. Rounded-top
+          only so the row of three flows as a single tiered stage. */}
       <div
-        className={`relative mt-3 flex w-full items-center justify-center overflow-hidden rounded-t-xl border-2 bg-black ${theme.borderColor} ${theme.platformHeight} transition-colors duration-300 group-hover:bg-white/[0.02]`}
+        className={`relative mt-3 flex w-full items-center justify-center overflow-hidden rounded-t-xl border-2 ${theme.borderColor} ${theme.bgGradient} ${theme.platformHeight} transition-colors duration-300 group-hover:brightness-110`}
       >
         {/* Top accent stripe — visual stage-top edge */}
         <span
@@ -668,10 +674,6 @@ function ScanPodiumColumn({
 }) {
   const theme = PODIUM_THEME[rank];
   const tier = getTier(row.overall);
-  // Tier letter renders white for everyone EXCEPT S-tier — that group
-  // keeps the cyan→violet gradient as a small "earned reward" accent.
-  // Brian's directive: less colour overall, but reserve colour for
-  // where it carries real meaning. S-tier is the meaningful one.
   const tierStyle: React.CSSProperties = tier.isGradient
     ? {
         backgroundImage:
@@ -681,7 +683,7 @@ function ScanPodiumColumn({
         color: 'transparent',
         textTransform: 'uppercase',
       }
-    : { color: '#ffffff', textTransform: 'uppercase' };
+    : { color: tier.color, textTransform: 'uppercase' };
   const photoSrc = row.image_url ?? row.avatar_url ?? null;
   // Smart name fx read the user's LIVE profile values (merged into the
   // row server-side), not the denormalised row.overall — so tier-prefix
@@ -725,7 +727,8 @@ function ScanPodiumColumn({
       </div>
       <div className="flex items-baseline gap-1">
         <span
-          className={`font-num font-extrabold leading-none tabular-nums text-white ${theme.scoreSize}`}
+          className={`font-num font-extrabold leading-none tabular-nums ${theme.scoreSize}`}
+          style={{ color: theme.accent }}
         >
           {row.overall}
         </span>
@@ -803,7 +806,8 @@ function BattlePodiumColumn({
         )}
       </div>
       <span
-        className={`font-num font-extrabold leading-none tabular-nums text-white ${theme.scoreSize}`}
+        className={`font-num font-extrabold leading-none tabular-nums ${theme.scoreSize}`}
+        style={{ color: theme.accent }}
       >
         {row.elo}
       </span>
@@ -814,9 +818,6 @@ function BattlePodiumColumn({
 function ScanRow({ row, rank }: { row: LeaderboardRow; rank: number }) {
   const tier = getTier(row.overall);
   const isGradient = tier.isGradient;
-  // S-tier keeps the gradient as the one earned colour accent on the
-  // row. Everything else renders monochrome white — matches the
-  // restrained palette on the podium platforms above.
   const tierStyle: React.CSSProperties = isGradient
     ? {
         backgroundImage: 'linear-gradient(135deg, #22d3ee 0%, #a855f7 100%)',
@@ -825,7 +826,7 @@ function ScanRow({ row, rank }: { row: LeaderboardRow; rank: number }) {
         color: 'transparent',
         textTransform: 'uppercase',
       }
-    : { color: '#ffffff', textTransform: 'uppercase' };
+    : { color: tier.color, textTransform: 'uppercase' };
   const photoSrc = row.image_url ?? row.avatar_url ?? null;
   // Smart name fx read the user's LIVE profile values (merged into the
   // row server-side), not the denormalised row.overall — keeps
@@ -885,7 +886,10 @@ function ScanRow({ row, rank }: { row: LeaderboardRow; rank: number }) {
           >
             {row.tier}
           </div>
-          <div className="font-num text-xs font-semibold tabular-nums text-white/85">
+          <div
+            className="font-num text-xs font-semibold tabular-nums"
+            style={{ color: getScoreColor(row.overall) }}
+          >
             {row.overall}
           </div>
         </div>

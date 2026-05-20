@@ -66,8 +66,7 @@ export async function ImpersonationBanner() {
       <div className="flex min-w-0 items-center gap-2">
         <span
           aria-hidden
-          className="flex h-5 w-5 flex-shrink-0 items-center justify-center border border-rose-400 bg-rose-500/30 text-[10px] font-bold text-rose-200"
-          style={{ borderRadius: 2 }}
+          className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-control border border-rose-400 bg-rose-500/30 text-[10px] font-bold text-rose-200"
         >
           !
         </span>

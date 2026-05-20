@@ -66,7 +66,7 @@ export default function HomePage() {
 
           <Link
             href="/leaderboard"
-            className="group relative flex items-center justify-between gap-3 overflow-hidden rounded-lg border border-white/20 bg-white/[0.02] px-5 py-4 text-sm text-white transition-all duration-300 hover:border-white/60 hover:bg-white/[0.05] hover:shadow-[0_0_32px_-4px_rgba(255,255,255,0.35),inset_0_1px_0_0_rgba(255,255,255,0.08)]"
+            className="group relative flex items-center justify-between gap-3 overflow-hidden rounded-control border border-white/20 bg-white/[0.02] px-5 py-4 text-sm text-white transition-all duration-300 hover:border-white/60 hover:bg-white/[0.05] hover:shadow-[0_0_32px_-4px_rgba(255,255,255,0.35),inset_0_1px_0_0_rgba(255,255,255,0.08)]"
             style={{ touchAction: 'manipulation' }}
           >
             <span className="flex items-center gap-2.5">
@@ -155,14 +155,14 @@ function HomeCard({
   return (
     <Link
       href={href}
-      className="group relative flex min-h-[220px] flex-col justify-between overflow-hidden rounded-xl border border-white/15 bg-gradient-to-br from-white/[0.03] via-black to-black p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-white/60 hover:shadow-[0_0_56px_-8px_rgba(255,255,255,0.35),inset_0_1px_0_0_rgba(255,255,255,0.08)] sm:min-h-[360px] sm:p-7"
+      className="group relative flex min-h-[220px] flex-col justify-between overflow-hidden rounded-panel border border-white/15 bg-gradient-to-br from-white/[0.03] via-black to-black p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-white/60 hover:shadow-[0_0_56px_-8px_rgba(255,255,255,0.35),inset_0_1px_0_0_rgba(255,255,255,0.08)] sm:min-h-[360px] sm:p-7"
       style={{ touchAction: 'manipulation' }}
     >
       {/* Top row: icon-pill + kicker text on the left, arrow on the
           right. Arrow lifts on hover. */}
       <div className="flex items-start justify-between">
         <div className="flex items-center gap-2.5">
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/20 bg-white/[0.04] text-white/90 backdrop-blur-sm transition-all duration-300 group-hover:scale-110 group-hover:border-white/50 group-hover:bg-white/[0.08] group-hover:text-white">
+          <span className="flex h-9 w-9 items-center justify-center rounded-control border border-white/20 bg-white/[0.04] text-white/90 backdrop-blur-sm transition-all duration-300 group-hover:scale-110 group-hover:border-white/50 group-hover:bg-white/[0.08] group-hover:text-white">
             {icon}
           </span>
           <span className="text-[11px] font-medium text-white/55">

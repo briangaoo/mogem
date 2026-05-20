@@ -212,7 +212,7 @@ export function LeaderboardModal({
             exit={{ y: 24, opacity: 0 }}
             transition={{ type: 'spring', stiffness: 300, damping: 28 }}
             onClick={(e) => e.stopPropagation()}
-            className="w-full max-w-sm rounded-sm border border-white/10 bg-black p-6"
+            className="w-full max-w-sm rounded-panel border border-white/10 bg-black p-6"
           >
             <div className="mb-4 flex items-center justify-between">
               <h2 id="lb-title" className="text-base font-semibold text-white">
@@ -237,13 +237,13 @@ export function LeaderboardModal({
               </p>
             ) : (
               <>
-                <div className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-white/30 bg-white/10 px-2.5 py-1 text-[11px] text-white">
+                <div className="mb-3 inline-flex items-center gap-1.5 rounded-control border border-white/30 bg-white/10 px-2.5 py-1 text-[11px] text-white">
                   <span className="h-1.5 w-1.5 rounded-full bg-white" />
                   you · {profileName ?? '…'}
                 </div>
 
                 {/* Read-only username display */}
-                <div className="mb-1 flex w-full items-center justify-between rounded-sm border border-white/10 bg-white/[0.02] px-3 py-3">
+                <div className="mb-1 flex w-full items-center justify-between rounded-control border border-white/10 bg-white/[0.02] px-3 py-3">
                   <span className="text-sm text-zinc-400">
                     {profileName ?? '…'}
                   </span>
@@ -266,11 +266,11 @@ export function LeaderboardModal({
                   type="button"
                   onClick={() => setIncludePhoto((v) => !v)}
                   aria-pressed={includePhoto}
-                  className="mb-3 flex w-full items-center gap-3 rounded-sm border border-white/10 bg-white/[0.02] px-3 py-3 text-left transition-colors hover:bg-white/[0.05]"
+                  className="mb-3 flex w-full items-center gap-3 rounded-control border border-white/10 bg-white/[0.02] px-3 py-3 text-left transition-colors hover:bg-white/[0.05]"
                   style={{ touchAction: 'manipulation' }}
                 >
                   <span
-                    className={`flex h-5 w-5 items-center justify-center rounded-sm border transition-colors ${
+                    className={`flex h-5 w-5 items-center justify-center rounded-control border transition-colors ${
                       includePhoto
                         ? 'border-white bg-white'
                         : 'border-white/30 bg-transparent'
@@ -321,7 +321,7 @@ export function LeaderboardModal({
                     extra checkbox. The data-storage acknowledgement
                     below covers the BIPA/GDPR consent requirement. */}
                 {triggersReview && (
-                  <div className="mb-3 flex items-start gap-2 rounded-sm border border-white/40 bg-white/[0.04] p-3">
+                  <div className="mb-3 flex items-start gap-2 rounded-control border border-white/40 bg-white/[0.04] p-3">
                     <AlertTriangle
                       size={13}
                       aria-hidden
@@ -349,14 +349,14 @@ export function LeaderboardModal({
                   onClick={() => setScanDataConsent((v) => !v)}
                   aria-pressed={scanDataConsent}
                   style={{ touchAction: 'manipulation' }}
-                  className={`mb-3 flex w-full items-start gap-3 rounded-sm border px-3 py-3 text-left transition-colors ${
+                  className={`mb-3 flex w-full items-start gap-3 rounded-control border px-3 py-3 text-left transition-colors ${
                     scanDataConsent
                       ? 'border-white bg-white/[0.08]'
                       : 'border-white/10 bg-white/[0.02]'
                   }`}
                 >
                   <span
-                    className={`mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-sm border transition-colors ${
+                    className={`mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-control border transition-colors ${
                       scanDataConsent
                         ? 'border-white bg-white'
                         : 'border-white/30 bg-transparent'
@@ -435,7 +435,7 @@ export function LeaderboardModal({
                     type="button"
                     onClick={onClose}
                     style={{ touchAction: 'manipulation' }}
-                    className="h-11 flex-1 rounded-full border border-white/15 bg-white/[0.03] text-sm text-white hover:bg-white/[0.07]"
+                    className="h-11 flex-1 rounded-control border border-white/15 bg-white/[0.03] text-sm text-white hover:bg-white/[0.07]"
                   >
                     Cancel
                   </button>
@@ -444,7 +444,7 @@ export function LeaderboardModal({
                     onClick={submit}
                     disabled={submitDisabled}
                     style={{ touchAction: 'manipulation' }}
-                    className="h-11 flex-1 rounded-full bg-white text-sm font-semibold text-black transition-colors hover:bg-zinc-100 disabled:opacity-50"
+                    className="h-11 flex-1 rounded-control bg-white text-sm font-semibold text-black transition-colors hover:bg-zinc-100 disabled:opacity-50"
                   >
                     {status.kind === 'submitting' ? 'saving…' : submitLabel}
                   </button>
@@ -517,7 +517,7 @@ function Cell({
   accentRight?: React.ReactNode;
 }) {
   return (
-    <div className="rounded-sm border border-white/10 bg-white/[0.02] px-3 py-2">
+    <div className="rounded-control border border-white/10 bg-white/[0.02] px-3 py-2">
       <div className="text-[10px] uppercase tracking-[0.16em] text-zinc-500">
         {label}
       </div>

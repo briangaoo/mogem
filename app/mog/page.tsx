@@ -420,7 +420,7 @@ function ModeSelect({
         type="button"
         onClick={findBattle}
         style={{ touchAction: 'manipulation' }}
-        className="group relative flex w-full flex-col overflow-hidden rounded-xl border border-white/20 bg-gradient-to-br from-white/[0.04] via-black to-black p-7 text-left transition-all duration-300 hover:-translate-y-0.5 hover:border-white/60 hover:shadow-[0_0_56px_-6px_rgba(255,255,255,0.4),inset_0_1px_0_0_rgba(255,255,255,0.08)]"
+        className="group relative flex w-full flex-col overflow-hidden rounded-panel border border-white/20 bg-gradient-to-br from-white/[0.04] via-black to-black p-7 text-left transition-all duration-300 hover:-translate-y-0.5 hover:border-white/60 hover:shadow-[0_0_56px_-6px_rgba(255,255,255,0.4),inset_0_1px_0_0_rgba(255,255,255,0.08)]"
       >
         <div className="flex items-start justify-between gap-4">
           <div className="flex flex-col gap-3">
@@ -472,7 +472,7 @@ function ModeSelect({
           type="button"
           onClick={onCreate}
           style={{ touchAction: 'manipulation' }}
-          className="group flex w-full flex-col gap-2.5 overflow-hidden rounded-xl border border-white/15 bg-gradient-to-br from-white/[0.03] via-black to-black p-5 text-left transition-all duration-300 hover:-translate-y-0.5 hover:border-white/60 hover:shadow-[0_0_32px_-6px_rgba(255,255,255,0.35),inset_0_1px_0_0_rgba(255,255,255,0.08)]"
+          className="group flex w-full flex-col gap-2.5 overflow-hidden rounded-panel border border-white/15 bg-gradient-to-br from-white/[0.03] via-black to-black p-5 text-left transition-all duration-300 hover:-translate-y-0.5 hover:border-white/60 hover:shadow-[0_0_32px_-6px_rgba(255,255,255,0.35),inset_0_1px_0_0_rgba(255,255,255,0.08)]"
         >
           <Users
             size={20}
@@ -491,7 +491,7 @@ function ModeSelect({
           type="button"
           onClick={onJoin}
           style={{ touchAction: 'manipulation' }}
-          className="group flex w-full flex-col gap-2.5 overflow-hidden rounded-xl border border-white/15 bg-gradient-to-br from-white/[0.03] via-black to-black p-5 text-left transition-all duration-300 hover:-translate-y-0.5 hover:border-white/60 hover:shadow-[0_0_32px_-6px_rgba(255,255,255,0.35),inset_0_1px_0_0_rgba(255,255,255,0.08)]"
+          className="group flex w-full flex-col gap-2.5 overflow-hidden rounded-panel border border-white/15 bg-gradient-to-br from-white/[0.03] via-black to-black p-5 text-left transition-all duration-300 hover:-translate-y-0.5 hover:border-white/60 hover:shadow-[0_0_32px_-6px_rgba(255,255,255,0.35),inset_0_1px_0_0_rgba(255,255,255,0.08)]"
         >
           <Search
             size={20}
@@ -576,13 +576,13 @@ function BattleStats() {
 
   if (!loaded) {
     return (
-      <section className="mt-6 border-2 border-white/20 bg-black p-5" style={{ borderRadius: 2 }}>
-        <div className="h-3 w-24 rounded bg-white/[0.06]" />
+      <section className="mt-6 rounded-panel border-2 border-white/20 bg-black p-5">
+        <div className="h-3 w-24 rounded-control bg-white/[0.06]" />
         <div className="mt-4 grid grid-cols-3 gap-x-4 gap-y-5">
           {Array.from({ length: 6 }).map((_, i) => (
             <div key={i} className="space-y-2">
-              <div className="h-2 w-12 rounded bg-white/[0.05]" />
-              <div className="h-6 w-16 rounded bg-white/[0.05]" />
+              <div className="h-2 w-12 rounded-control bg-white/[0.05]" />
+              <div className="h-6 w-16 rounded-control bg-white/[0.05]" />
             </div>
           ))}
         </div>
@@ -608,7 +608,7 @@ function BattleStats() {
   const streakHot = profile.current_streak >= 3;
 
   return (
-    <section className="mt-6 overflow-hidden border-2 border-white/20 bg-black p-5" style={{ borderRadius: 2 }}>
+    <section className="mt-6 overflow-hidden rounded-panel border-2 border-white/20 bg-black p-5">
       <header className="mb-5 flex items-baseline justify-between">
         <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/50">
           YOUR BATTLES
@@ -719,8 +719,7 @@ function BattleStats() {
                 <span
                   key={`empty-${i}`}
                   aria-hidden
-                  className="h-2 w-5 bg-white/[0.06]"
-                  style={{ borderRadius: 1 }}
+                  className="h-2 w-5 rounded-control bg-white/[0.06]"
                 />
               ),
             )}
@@ -736,8 +735,7 @@ function BattleStats() {
                 <span
                   key={r.battle_id}
                   aria-label={label}
-                  className={`h-2 w-5 ${cls}`}
-                  style={{ borderRadius: 1 }}
+                  className={`h-2 w-5 rounded-control ${cls}`}
                 />
               );
             })}
@@ -752,7 +750,7 @@ function BattleStats() {
       )}
 
       {unranked && recent.length === 0 && (
-        <p className="mt-4 border border-white/20 bg-white/[0.03] px-3 py-2.5 text-[11px] uppercase tracking-[0.14em] text-white/70" style={{ borderRadius: 2 }}>
+        <p className="mt-4 rounded-control border border-white/20 bg-white/[0.03] px-3 py-2.5 text-[11px] uppercase tracking-[0.14em] text-white/70">
           PLAY YOUR FIRST BATTLE TO START RANKING. YOU&apos;RE PLACED
           PROVISIONALLY FOR YOUR FIRST 30 MATCHES (K=32) BEFORE SETTLING.
         </p>
@@ -967,9 +965,9 @@ function JoinInput({
       }}
       className="flex flex-col gap-5"
     >
-      <div className="relative flex flex-col items-center gap-6 border-2 border-white/20 bg-black px-5 py-9" style={{ borderRadius: 2 }}>
+      <div className="relative flex flex-col items-center gap-6 rounded-panel border-2 border-white/20 bg-black px-5 py-9">
         <div className="flex flex-col items-center gap-1.5">
-          <span className="inline-flex items-center gap-1.5 border border-white/30 bg-white/[0.04] px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-white" style={{ borderRadius: 2 }}>
+          <span className="inline-flex items-center gap-1.5 rounded-control border border-white/30 bg-white/[0.04] px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-white">
             <Search size={11} aria-hidden /> ENTER CODE
           </span>
           <p className="text-[10px] uppercase tracking-[0.18em] text-white/50">
@@ -1000,12 +998,12 @@ function JoinInput({
               onPaste={(e) => handlePaste(idx, e)}
               onFocus={(e) => e.currentTarget.select()}
               aria-label={`code character ${idx + 1}`}
-              className={`font-num h-14 w-11 border-2 bg-black text-center text-3xl font-extrabold uppercase tabular-nums text-white caret-transparent transition-colors sm:h-16 sm:w-12 sm:text-[2rem] ${
+              className={`font-num h-14 w-11 rounded-control border-2 bg-black text-center text-3xl font-extrabold uppercase tabular-nums text-white caret-transparent transition-colors sm:h-16 sm:w-12 sm:text-[2rem] ${
                 ch
                   ? 'border-white'
                   : 'border-white/25 hover:border-white/50 focus:border-white'
               } focus:outline-none`}
-              style={{ textTransform: 'uppercase', borderRadius: 2 }}
+              style={{ textTransform: 'uppercase' }}
             />
           ))}
         </div>
@@ -1015,16 +1013,16 @@ function JoinInput({
         <button
           type="button"
           onClick={onCancel}
-          style={{ touchAction: 'manipulation', borderRadius: 2 }}
-          className="inline-flex h-11 flex-1 items-center justify-center border-2 border-white/30 bg-black text-xs font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:border-white hover:bg-white/[0.04]"
+          style={{ touchAction: 'manipulation' }}
+          className="inline-flex h-11 flex-1 items-center justify-center rounded-control border-2 border-white/30 bg-black text-xs font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:border-white hover:bg-white/[0.04]"
         >
           CANCEL
         </button>
         <button
           type="submit"
           disabled={!valid}
-          style={{ touchAction: 'manipulation', borderRadius: 2 }}
-          className="inline-flex h-11 flex-[2] items-center justify-center gap-2 bg-white text-xs font-bold uppercase tracking-[0.18em] text-black transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-30"
+          style={{ touchAction: 'manipulation' }}
+          className="inline-flex h-11 flex-[2] items-center justify-center gap-2 rounded-control bg-white text-xs font-bold uppercase tracking-[0.18em] text-black transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-30"
         >
           {valid ? (
             <>
@@ -1078,7 +1076,7 @@ function Joining_PrivateLoader({
 
   if (errMessage) {
     return (
-      <div className="border-2 border-red-500/40 bg-red-500/[0.06] p-6 text-sm uppercase tracking-[0.14em] text-red-200" style={{ borderRadius: 2 }}>
+      <div className="rounded-control border-2 border-red-500/40 bg-red-500/[0.06] p-6 text-sm uppercase tracking-[0.14em] text-red-200">
         {prettyJoinError(errMessage)}
       </div>
     );
@@ -1324,9 +1322,9 @@ function Lobby({
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="relative overflow-hidden rounded-xl border border-white/15 bg-gradient-to-br from-white/[0.04] via-black to-black px-5 py-7 shadow-[0_0_32px_-12px_rgba(255,255,255,0.25),inset_0_1px_0_0_rgba(255,255,255,0.05)]">
+      <div className="relative overflow-hidden rounded-panel border border-white/15 bg-gradient-to-br from-white/[0.04] via-black to-black px-5 py-7 shadow-[0_0_32px_-12px_rgba(255,255,255,0.25),inset_0_1px_0_0_rgba(255,255,255,0.05)]">
         <div className="flex flex-col items-center gap-1.5 text-center">
-          <span className="inline-flex items-center gap-1.5 rounded-md border border-white/25 bg-white/[0.06] px-2.5 py-1 text-[11px] font-medium text-white">
+          <span className="inline-flex items-center gap-1.5 rounded-control border border-white/25 bg-white/[0.06] px-2.5 py-1 text-[11px] font-medium text-white">
             <span className="relative flex h-1.5 w-1.5">
               <span className="absolute inset-0 animate-ping rounded-full bg-white/70" />
               <span className="relative h-1.5 w-1.5 rounded-full bg-white" />
@@ -1348,7 +1346,7 @@ function Lobby({
           {cells.map((ch, idx) => (
             <span
               key={idx}
-              className="font-num inline-flex h-14 w-11 items-center justify-center rounded-md border border-white/25 bg-gradient-to-b from-white/[0.04] to-black text-3xl font-extrabold uppercase tabular-nums text-white shadow-[0_0_20px_-6px_rgba(255,255,255,0.35),inset_0_1px_0_0_rgba(255,255,255,0.06)] transition-all duration-300 group-hover:border-white/60 group-hover:shadow-[0_0_32px_-4px_rgba(255,255,255,0.55),inset_0_1px_0_0_rgba(255,255,255,0.1)] sm:h-16 sm:w-12 sm:text-[2rem]"
+              className="font-num inline-flex h-14 w-11 items-center justify-center rounded-control border border-white/25 bg-gradient-to-b from-white/[0.04] to-black text-3xl font-extrabold uppercase tabular-nums text-white shadow-[0_0_20px_-6px_rgba(255,255,255,0.35),inset_0_1px_0_0_rgba(255,255,255,0.06)] transition-all duration-300 group-hover:border-white/60 group-hover:shadow-[0_0_32px_-4px_rgba(255,255,255,0.55),inset_0_1px_0_0_rgba(255,255,255,0.1)] sm:h-16 sm:w-12 sm:text-[2rem]"
               style={{ textTransform: 'uppercase' }}
             >
               {ch}
@@ -1361,7 +1359,7 @@ function Lobby({
             type="button"
             onClick={onCopy}
             style={{ touchAction: 'manipulation' }}
-            className="inline-flex h-11 items-center gap-2 rounded-md border border-white/20 bg-black/60 px-4 text-[13px] font-medium text-white transition-all duration-200 hover:border-white/50 hover:bg-white/[0.06] hover:shadow-[0_0_20px_-6px_rgba(255,255,255,0.4)]"
+            className="inline-flex h-11 items-center gap-2 rounded-control border border-white/20 bg-black/60 px-4 text-[13px] font-medium text-white transition-all duration-200 hover:border-white/50 hover:bg-white/[0.06] hover:shadow-[0_0_20px_-6px_rgba(255,255,255,0.4)]"
           >
             {copied ? (
               <>
@@ -1378,7 +1376,7 @@ function Lobby({
               type="button"
               onClick={onShare}
               style={{ touchAction: 'manipulation' }}
-              className="inline-flex h-11 items-center gap-2 rounded-md bg-white px-4 text-[13px] font-semibold text-black transition-all duration-200 hover:shadow-[0_0_28px_-4px_rgba(255,255,255,0.65)]"
+              className="inline-flex h-11 items-center gap-2 rounded-control bg-white px-4 text-[13px] font-semibold text-black transition-all duration-200 hover:shadow-[0_0_28px_-4px_rgba(255,255,255,0.65)]"
             >
               <Share2 size={14} aria-hidden /> Share
             </button>
@@ -1386,7 +1384,7 @@ function Lobby({
         </div>
       </div>
 
-      <div className="rounded-xl border border-white/15 bg-white/[0.02] p-5 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)]">
+      <div className="rounded-panel border border-white/15 bg-white/[0.02] p-5 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)]">
         <div className="mb-3 flex items-center justify-between">
           <span className="text-[12px] font-medium text-white/55">
             In lobby · {participants.length}/10
@@ -1417,8 +1415,7 @@ function Lobby({
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
-                className="flex items-center gap-3 border border-white/15 bg-white/[0.02] px-3 py-2"
-                style={{ borderRadius: 2 }}
+                className="flex items-center gap-3 rounded-control border border-white/15 bg-white/[0.02] px-3 py-2"
               >
                 <Frame
                   slug={p.equipped_frame ?? null}
@@ -1458,7 +1455,7 @@ function Lobby({
                 )}
                 <span className="flex flex-shrink-0 items-center gap-1.5 text-[11px] text-white/50">
                   {isHostRow && (
-                    <span className="rounded-md border border-white/30 bg-white/[0.08] px-1.5 py-0.5 text-[10px] font-medium text-white">
+                    <span className="rounded-control border border-white/30 bg-white/[0.08] px-1.5 py-0.5 text-[10px] font-medium text-white">
                       Host
                     </span>
                   )}
@@ -1468,7 +1465,7 @@ function Lobby({
             );
           })}
           {participants.length > 0 && participants.length < 2 && (
-            <li className="flex items-center gap-3 rounded-md border border-dashed border-white/15 bg-white/[0.01] px-3 py-2 text-[12px] text-white/45">
+            <li className="flex items-center gap-3 rounded-control border border-dashed border-white/15 bg-white/[0.01] px-3 py-2 text-[12px] text-white/45">
               <span
                 aria-hidden
                 className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-dashed border-white/15"
@@ -1493,7 +1490,7 @@ function Lobby({
           type="button"
           onClick={onLeave}
           style={{ touchAction: 'manipulation' }}
-          className="inline-flex h-11 flex-1 items-center justify-center rounded-md border border-white/20 bg-black/60 text-[13px] font-medium text-white transition-all duration-200 hover:border-white/50 hover:bg-white/[0.05] hover:shadow-[0_0_20px_-6px_rgba(255,255,255,0.35)]"
+          className="inline-flex h-11 flex-1 items-center justify-center rounded-control border border-white/20 bg-black/60 text-[13px] font-medium text-white transition-all duration-200 hover:border-white/50 hover:bg-white/[0.05] hover:shadow-[0_0_20px_-6px_rgba(255,255,255,0.35)]"
         >
           Leave
         </button>
@@ -1503,7 +1500,7 @@ function Lobby({
             onClick={onStart}
             disabled={!canStart}
             style={{ touchAction: 'manipulation' }}
-            className="inline-flex h-11 flex-[2] items-center justify-center gap-2 rounded-md bg-white text-[13px] font-semibold text-black transition-all duration-200 hover:shadow-[0_0_36px_-4px_rgba(255,255,255,0.75)] disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:shadow-none"
+            className="inline-flex h-11 flex-[2] items-center justify-center gap-2 rounded-control bg-white text-[13px] font-semibold text-black transition-all duration-200 hover:shadow-[0_0_36px_-4px_rgba(255,255,255,0.75)] disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:shadow-none"
           >
             {starting ? (
               <>
@@ -1514,7 +1511,7 @@ function Lobby({
             )}
           </button>
         ) : (
-          <div className="inline-flex h-11 flex-[2] items-center justify-center rounded-md border border-white/10 bg-black/40 text-[13px] font-medium text-white/45">
+          <div className="inline-flex h-11 flex-[2] items-center justify-center rounded-control border border-white/10 bg-black/40 text-[13px] font-medium text-white/45">
             Waiting for host…
           </div>
         )}
@@ -1623,8 +1620,7 @@ function Joining({
   if (failed) {
     return (
       <div
-        className="flex w-full max-w-sm flex-col gap-4 border-2 border-red-500/60 bg-black p-6 text-center"
-        style={{ borderRadius: 2 }}
+        className="flex w-full max-w-sm flex-col gap-4 rounded-panel border-2 border-red-500/60 bg-black p-6 text-center"
         role="alert"
       >
         <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-red-300">
@@ -1638,16 +1634,16 @@ function Joining({
           <button
             type="button"
             onClick={onError}
-            style={{ touchAction: 'manipulation', borderRadius: 2 }}
-            className="inline-flex h-11 flex-1 items-center justify-center border-2 border-white/30 bg-black text-xs font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:border-white hover:bg-white/[0.04]"
+            style={{ touchAction: 'manipulation' }}
+            className="inline-flex h-11 flex-1 items-center justify-center rounded-control border-2 border-white/30 bg-black text-xs font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:border-white hover:bg-white/[0.04]"
           >
             GO BACK
           </button>
           <button
             type="button"
             onClick={onTryAgain}
-            style={{ touchAction: 'manipulation', borderRadius: 2 }}
-            className="inline-flex h-11 flex-[1.2] items-center justify-center bg-white text-xs font-bold uppercase tracking-[0.18em] text-black transition-opacity hover:opacity-90"
+            style={{ touchAction: 'manipulation' }}
+            className="inline-flex h-11 flex-[1.2] items-center justify-center rounded-control bg-white text-xs font-bold uppercase tracking-[0.18em] text-black transition-opacity hover:opacity-90"
           >
             TRY AGAIN
           </button>
@@ -1668,8 +1664,7 @@ function CenteredSpinner({
 }) {
   return (
     <div
-      className="flex flex-col items-center gap-3 border-2 border-white/20 bg-black p-8 text-center"
-      style={{ borderRadius: 2 }}
+      className="flex flex-col items-center gap-3 rounded-panel border-2 border-white/20 bg-black p-8 text-center"
     >
       <motion.div
         animate={{ scale: [1, 1.06, 1] }}

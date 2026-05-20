@@ -508,7 +508,7 @@ export function AdminConsole({ adminUserId }: { adminUserId: string }) {
           <div className="flex min-w-0 items-center gap-3">
             <span
               aria-hidden
-              className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg border border-rose-500/30 bg-rose-500/10"
+              className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-control border border-rose-500/30 bg-rose-500/10"
             >
               <ShieldCheck size={16} className="text-rose-400" />
             </span>
@@ -521,7 +521,7 @@ export function AdminConsole({ adminUserId }: { adminUserId: string }) {
               </h1>
             </div>
           </div>
-          <div className="hidden items-center gap-2 rounded-md border border-zinc-800 bg-zinc-900/70 px-2.5 py-1 text-[11px] text-zinc-400 sm:inline-flex">
+          <div className="hidden items-center gap-2 rounded-control border border-zinc-800 bg-zinc-900/70 px-2.5 py-1 text-[11px] text-zinc-400 sm:inline-flex">
             <span
               aria-hidden
               className="h-1.5 w-1.5 rounded-full bg-emerald-400"
@@ -723,7 +723,7 @@ export function AdminConsole({ adminUserId }: { adminUserId: string }) {
                       return (
                         <li
                           key={r.id}
-                          className="flex flex-col gap-2 rounded-md border border-zinc-800 bg-zinc-900/60 px-4 py-3"
+                          className="flex flex-col gap-2 rounded-control border border-zinc-800 bg-zinc-900/60 px-4 py-3"
                         >
                           <div className="flex items-start justify-between gap-3">
                             <div className="flex min-w-0 flex-col gap-0.5">
@@ -754,7 +754,7 @@ export function AdminConsole({ adminUserId }: { adminUserId: string }) {
                               </AdminGhostButton>
                             </div>
                           </div>
-                          <div className="rounded-md border-l-2 border-zinc-700 bg-zinc-950/60 px-3 py-2 text-[13px] text-zinc-200">
+                          <div className="rounded-control border-l-2 border-zinc-700 bg-zinc-950/60 px-3 py-2 text-[13px] text-zinc-200">
                             <span className="block text-[10px] font-semibold uppercase tracking-[0.18em] text-zinc-500">
                               Reason
                             </span>
@@ -812,14 +812,14 @@ export function AdminConsole({ adminUserId }: { adminUserId: string }) {
                   placeholder="@someone, email, or uuid"
                   autoComplete="off"
                   spellCheck={false}
-                  className="w-full rounded-md border border-zinc-800 bg-zinc-900 px-3 py-2.5 pl-9 text-[14px] text-zinc-100 placeholder:text-zinc-500 transition-colors focus:border-zinc-600 focus:bg-zinc-900/80 focus:outline-none"
+                  className="w-full rounded-control border border-zinc-800 bg-zinc-900 px-3 py-2.5 pl-9 text-[14px] text-zinc-100 placeholder:text-zinc-500 transition-colors focus:border-zinc-600 focus:bg-zinc-900/80 focus:outline-none"
                   style={{ textTransform: 'none' }}
                 />
               </div>
               <button
                 type="submit"
                 disabled={searching || !query.trim()}
-                className="inline-flex h-11 items-center gap-1.5 rounded-md bg-white px-4 text-[13px] font-semibold text-black transition-colors hover:bg-zinc-200 disabled:cursor-not-allowed disabled:opacity-40"
+                className="inline-flex h-11 items-center gap-1.5 rounded-control bg-white px-4 text-[13px] font-semibold text-black transition-colors hover:bg-zinc-200 disabled:cursor-not-allowed disabled:opacity-40"
               >
                 {searching ? (
                   <Loader2 size={14} className="animate-spin" />
@@ -847,7 +847,7 @@ export function AdminConsole({ adminUserId }: { adminUserId: string }) {
           <div className="mt-6 flex flex-col gap-4">
             {/* Status banner — banned in rose, otherwise emerald. */}
             {user.banned_at ? (
-              <div className="flex items-start gap-3 rounded-lg border border-rose-500/40 bg-rose-500/[0.06] px-4 py-3">
+              <div className="flex items-start gap-3 rounded-control border border-rose-500/40 bg-rose-500/[0.06] px-4 py-3">
                 <Ban size={16} className="mt-0.5 text-rose-400" aria-hidden />
                 <div className="flex flex-1 flex-col gap-0.5">
                   <span className="text-[12px] font-semibold text-rose-200">
@@ -859,7 +859,7 @@ export function AdminConsole({ adminUserId }: { adminUserId: string }) {
                 </div>
               </div>
             ) : (
-              <div className="flex items-center gap-2 rounded-lg border border-emerald-500/30 bg-emerald-500/[0.05] px-4 py-2.5">
+              <div className="flex items-center gap-2 rounded-control border border-emerald-500/30 bg-emerald-500/[0.05] px-4 py-2.5">
                 <Check size={14} className="text-emerald-400" aria-hidden />
                 <span className="text-[13px] text-emerald-200">
                   In good standing
@@ -974,7 +974,7 @@ export function AdminConsole({ adminUserId }: { adminUserId: string }) {
                     autoComplete="off"
                     spellCheck={false}
                     maxLength={500}
-                    className="flex-1 rounded-md border border-zinc-800 bg-zinc-900 px-3 py-2.5 text-[14px] text-zinc-100 placeholder:text-zinc-500 transition-colors focus:border-rose-500/60 focus:bg-zinc-900/80 focus:outline-none"
+                    className="flex-1 rounded-control border border-zinc-800 bg-zinc-900 px-3 py-2.5 text-[14px] text-zinc-100 placeholder:text-zinc-500 transition-colors focus:border-rose-500/60 focus:bg-zinc-900/80 focus:outline-none"
                     style={{ textTransform: 'none' }}
                   />
                   <AdminDangerButton
@@ -1048,10 +1048,10 @@ export function AdminConsole({ adminUserId }: { adminUserId: string }) {
                       return (
                         <li
                           key={scan.id}
-                          className="flex items-center gap-3 rounded-md px-3 py-2 transition-colors hover:bg-zinc-800/40"
+                          className="flex items-center gap-3 rounded-control px-3 py-2 transition-colors hover:bg-zinc-800/40"
                         >
                           <span
-                            className="rounded-md border border-emerald-500/30 bg-emerald-500/10 px-2 py-0.5 text-[12px] font-semibold tabular-nums text-emerald-300"
+                            className="rounded-control border border-emerald-500/30 bg-emerald-500/10 px-2 py-0.5 text-[12px] font-semibold tabular-nums text-emerald-300"
                           >
                             {scan.overall}
                           </span>
@@ -1065,7 +1065,7 @@ export function AdminConsole({ adminUserId }: { adminUserId: string }) {
                             type="button"
                             onClick={() => onDeleteScan(scan.id)}
                             disabled={pending}
-                            className="inline-flex h-7 w-7 items-center justify-center rounded-md text-zinc-500 transition-colors hover:bg-rose-500/15 hover:text-rose-300 disabled:cursor-not-allowed disabled:opacity-40"
+                            className="inline-flex h-7 w-7 items-center justify-center rounded-control text-zinc-500 transition-colors hover:bg-rose-500/15 hover:text-rose-300 disabled:cursor-not-allowed disabled:opacity-40"
                             aria-label={`Delete scan ${scan.id}`}
                           >
                             {pending ? (
@@ -1150,7 +1150,7 @@ export function AdminConsole({ adminUserId }: { adminUserId: string }) {
 // ---------------------------------------------------------------------
 // Admin design primitives — small, opinionated components shared
 // across the tabs. They commit to one visual language: zinc-900 cards
-// on a near-black surface with 1px zinc-800 borders, rounded-md
+// on a near-black surface with 1px zinc-800 borders, rounded-control
 // corners, generous padding, and motion only on hover. Numbers are
 // tabular-nums but NOT monospace — keeps the panel reading like a
 // modern admin tool rather than a terminal dashboard.
@@ -1174,7 +1174,7 @@ function AdminTabButton({
       type="button"
       onClick={onClick}
       style={{ touchAction: 'manipulation' }}
-      className={`relative inline-flex h-10 items-center gap-1.5 rounded-md px-3 text-[13px] font-medium transition-colors ${
+      className={`relative inline-flex h-10 items-center gap-1.5 rounded-control px-3 text-[13px] font-medium transition-colors ${
         active
           ? 'bg-zinc-900 text-white'
           : 'text-zinc-400 hover:bg-zinc-900/60 hover:text-zinc-100'
@@ -1190,7 +1190,7 @@ function AdminTabButton({
       {active && (
         <span
           aria-hidden
-          className="absolute -bottom-1.5 left-1/2 h-0.5 w-8 -translate-x-1/2 rounded-full bg-white"
+          className="absolute -bottom-1.5 left-1/2 h-0.5 w-8 -translate-x-1/2 rounded-control bg-white"
         />
       )}
     </button>
@@ -1211,7 +1211,7 @@ function AdminCard({
   children: React.ReactNode;
 }) {
   return (
-    <section className="rounded-lg border border-zinc-800 bg-zinc-900/60">
+    <section className="rounded-panel border border-zinc-800 bg-zinc-900/60">
       {(title || action) && (
         <header className="flex items-start justify-between gap-3 border-b border-zinc-800 px-5 py-3.5">
           {title && (
@@ -1256,7 +1256,7 @@ function MetricCard({
 }) {
   return (
     <div
-      className={`flex flex-col gap-1.5 rounded-lg border bg-zinc-900/60 px-4 py-4 transition-colors ${
+      className={`flex flex-col gap-1.5 rounded-control border bg-zinc-900/60 px-4 py-4 transition-colors ${
         highlight
           ? 'border-zinc-700/80 hover:border-zinc-600'
           : 'border-zinc-800 hover:border-zinc-700'
@@ -1322,7 +1322,7 @@ function StatusPill({
   }[tone];
   return (
     <span
-      className={`inline-flex items-center gap-1 rounded-md border px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.14em] ${toneClass}`}
+      className={`inline-flex items-center gap-1 rounded-control border px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.14em] ${toneClass}`}
     >
       {icon}
       {children}
@@ -1352,7 +1352,7 @@ function AdminGhostButton({
       onClick={onClick}
       disabled={disabled}
       style={{ touchAction: 'manipulation' }}
-      className={`inline-flex h-9 items-center gap-1.5 rounded-md border px-3 text-[12px] font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-40 ${accentClass}`}
+      className={`inline-flex h-9 items-center gap-1.5 rounded-control border px-3 text-[12px] font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-40 ${accentClass}`}
     >
       {icon}
       {children}
@@ -1382,7 +1382,7 @@ function AdminPrimaryButton({
       onClick={onClick}
       disabled={disabled}
       style={{ touchAction: 'manipulation' }}
-      className={`inline-flex h-9 items-center gap-1.5 rounded-md px-3 text-[12px] font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-40 ${toneClass}`}
+      className={`inline-flex h-9 items-center gap-1.5 rounded-control px-3 text-[12px] font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-40 ${toneClass}`}
     >
       {icon}
       {children}
@@ -1412,7 +1412,7 @@ function AdminDangerButton({
       onClick={onClick}
       disabled={disabled}
       style={{ touchAction: 'manipulation' }}
-      className={`inline-flex h-9 items-center gap-1.5 rounded-md px-3 text-[12px] font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-40 ${variantClass}`}
+      className={`inline-flex h-9 items-center gap-1.5 rounded-control px-3 text-[12px] font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-40 ${variantClass}`}
     >
       {icon}
       {children}
@@ -1432,11 +1432,11 @@ function AuditEventRow({
   showUser?: boolean;
 }) {
   return (
-    <li className="flex items-center gap-2 rounded-md px-2 py-1.5 text-[12px] transition-colors hover:bg-zinc-800/40">
+    <li className="flex items-center gap-2 rounded-control px-2 py-1.5 text-[12px] transition-colors hover:bg-zinc-800/40">
       <span className="font-mono text-[11px] text-zinc-500">
         {shortDateTime(entry.created_at)}
       </span>
-      <span className="rounded border border-zinc-700/80 bg-zinc-900 px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-[0.1em] text-zinc-200">
+      <span className="rounded-control border border-zinc-700/80 bg-zinc-900 px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-[0.1em] text-zinc-200">
         {entry.action}
       </span>
       {showUser && entry.user_id && (

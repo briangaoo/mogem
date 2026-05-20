@@ -483,11 +483,10 @@ function PublicMatchmaking({
         />
         {/* Identity pill */}
         <div
-          className="absolute flex items-center gap-2 border border-white/30 bg-black px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-white"
+          className="absolute flex items-center gap-2 rounded-control border border-white/30 bg-black px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-white"
           style={{
             bottom: 'max(env(safe-area-inset-bottom), 16px)',
             left: 'max(env(safe-area-inset-left), 16px)',
-            borderRadius: 2,
           }}
         >
           {avatarUrl ? (
@@ -519,11 +518,10 @@ function PublicMatchmaking({
         <OpponentSlot status={status} />
 
         <div
-          className="absolute flex items-center gap-2 border border-white/30 bg-black px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-white/70"
+          className="absolute flex items-center gap-2 rounded-control border border-white/30 bg-black px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-white/70"
           style={{
             bottom: 'max(env(safe-area-inset-bottom), 16px)',
             left: 'max(env(safe-area-inset-left), 16px)',
-            borderRadius: 2,
           }}
         >
           <span
@@ -561,9 +559,8 @@ function PublicMatchmaking({
           touchAction: 'manipulation',
           top: 'max(env(safe-area-inset-top), 16px)',
           right: 'max(env(safe-area-inset-right), 16px)',
-          borderRadius: 2,
         }}
-        className="absolute z-10 inline-flex h-11 items-center gap-1.5 border-2 border-white/40 bg-black px-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:border-white hover:bg-white/[0.04]"
+        className="absolute z-10 inline-flex h-11 items-center gap-1.5 rounded-control border-2 border-white/40 bg-black px-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:border-white hover:bg-white/[0.04]"
       >
         <X size={12} aria-hidden /> CANCEL
       </button>
@@ -580,8 +577,7 @@ function PublicMatchmaking({
           role="alert"
         >
           <div
-            className="flex w-full max-w-sm flex-col gap-4 border-2 border-red-500/60 bg-black p-6 text-center"
-            style={{ borderRadius: 2 }}
+            className="flex w-full max-w-sm flex-col gap-4 rounded-panel border-2 border-red-500/60 bg-black p-6 text-center"
           >
             <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-red-300">
               CONNECTION FAILED
@@ -593,16 +589,16 @@ function PublicMatchmaking({
               <button
                 type="button"
                 onClick={onCancel}
-                style={{ touchAction: 'manipulation', borderRadius: 2 }}
-                className="inline-flex h-11 flex-1 items-center justify-center border-2 border-white/30 bg-black text-xs font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:border-white hover:bg-white/[0.04]"
+                style={{ touchAction: 'manipulation' }}
+                className="inline-flex h-11 flex-1 items-center justify-center rounded-control border-2 border-white/30 bg-black text-xs font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:border-white hover:bg-white/[0.04]"
               >
                 GO BACK
               </button>
               <button
                 type="button"
                 onClick={onRetryHandoff}
-                style={{ touchAction: 'manipulation', borderRadius: 2 }}
-                className="inline-flex h-11 flex-[1.2] items-center justify-center bg-white text-xs font-bold uppercase tracking-[0.18em] text-black transition-opacity hover:opacity-90"
+                style={{ touchAction: 'manipulation' }}
+                className="inline-flex h-11 flex-[1.2] items-center justify-center rounded-control bg-white text-xs font-bold uppercase tracking-[0.18em] text-black transition-opacity hover:opacity-90"
               >
                 TRY AGAIN
               </button>

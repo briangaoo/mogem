@@ -95,12 +95,11 @@ export function LiveScanMeter({ score, visible, error = false }: ScanMeterProps)
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -12 }}
           transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-          className="pointer-events-none absolute z-30 flex w-[180px] flex-col gap-3 bg-black px-3.5 py-3"
+          className="pointer-events-none absolute z-30 flex w-[180px] flex-col gap-3 rounded-control bg-black px-3.5 py-3"
           style={{
             top: 'calc(max(env(safe-area-inset-top), 12px) + 12px)',
             left: 'calc(max(env(safe-area-inset-left), 12px) + 12px)',
             border: `2px solid ${color}`,
-            borderRadius: 2,
           }}
           aria-hidden
         >

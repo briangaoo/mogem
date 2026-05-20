@@ -59,7 +59,7 @@ export function PrivacyModal({ open, onAcknowledge }: Props) {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 40, opacity: 0 }}
             transition={{ type: 'spring', stiffness: 260, damping: 26 }}
-            className="w-full max-w-sm rounded-sm border border-white/10 bg-black p-6"
+            className="w-full max-w-sm rounded-panel border border-white/10 bg-black p-6"
           >
             <h2
               id="privacy-title"
@@ -138,7 +138,7 @@ export function PrivacyModal({ open, onAcknowledge }: Props) {
               onClick={() => setAccepted((v) => !v)}
               aria-pressed={accepted}
               style={{ touchAction: 'manipulation' }}
-              className={`mt-5 flex w-full items-start gap-3 rounded-sm border px-3.5 py-3 text-left transition-colors ${
+              className={`mt-5 flex w-full items-start gap-3 rounded-control border px-3.5 py-3 text-left transition-colors ${
                 accepted
                   ? 'border-white bg-white/[0.08]'
                   : 'border-white/10 bg-white/[0.02] hover:bg-white/[0.04]'
@@ -146,7 +146,7 @@ export function PrivacyModal({ open, onAcknowledge }: Props) {
             >
               <span
                 aria-hidden
-                className={`mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-sm border transition-colors ${
+                className={`mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-control border transition-colors ${
                   accepted
                     ? 'border-white bg-white'
                     : 'border-white/25 bg-transparent'
@@ -200,7 +200,7 @@ export function PrivacyModal({ open, onAcknowledge }: Props) {
               disabled={!accepted}
               aria-label="Accept and continue"
               style={{ touchAction: 'manipulation' }}
-              className="mt-3 h-12 w-full rounded-full bg-white text-sm font-semibold text-black transition-colors hover:bg-zinc-100 active:bg-zinc-200 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-white"
+              className="mt-3 h-12 w-full rounded-control bg-white text-sm font-semibold text-black transition-colors hover:bg-zinc-100 active:bg-zinc-200 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-white"
             >
               {accepted ? 'Accept & continue' : 'Check the box to continue'}
             </button>

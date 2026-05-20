@@ -131,9 +131,8 @@ export function PromoteBestScanModal({
             animate={{ y: 0, opacity: 1, scale: 1 }}
             exit={{ y: 12, opacity: 0, scale: 0.97 }}
             transition={{ type: 'spring', stiffness: 320, damping: 28 }}
-            className="relative w-full max-w-sm border-2 border-white/20 bg-black p-6"
+            className="relative w-full max-w-sm rounded-panel border-2 border-white/20 bg-black p-6"
             style={{
-              borderRadius: 2,
               boxShadow: `0 0 48px -12px ${accent}66`,
             }}
           >
@@ -186,16 +185,15 @@ export function PromoteBestScanModal({
               type="button"
               onClick={() => setIncludePhoto((v) => !v)}
               aria-pressed={includePhoto}
-              className="mb-5 flex w-full items-start gap-3 border border-white/15 bg-white/[0.02] px-3 py-3 text-left transition-colors hover:bg-white/[0.05]"
-              style={{ borderRadius: 2, touchAction: 'manipulation' }}
+              className="mb-5 flex w-full items-start gap-3 rounded-control border border-white/15 bg-white/[0.02] px-3 py-3 text-left transition-colors hover:bg-white/[0.05]"
+              style={{ touchAction: 'manipulation' }}
             >
               <span
-                className={`mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center border transition-colors ${
+                className={`mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-control border transition-colors ${
                   includePhoto
                     ? 'border-white bg-white'
                     : 'border-white/30 bg-transparent'
                 }`}
-                style={{ borderRadius: 2 }}
                 aria-hidden
               >
                 {includePhoto && (
@@ -222,8 +220,8 @@ export function PromoteBestScanModal({
                 type="button"
                 onClick={onClose}
                 disabled={status === 'submitting'}
-                style={{ touchAction: 'manipulation', borderRadius: 2 }}
-                className="inline-flex h-11 flex-1 items-center justify-center border-2 border-white/30 bg-black text-xs font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:border-white hover:bg-white/[0.04] disabled:opacity-40"
+                style={{ touchAction: 'manipulation' }}
+                className="inline-flex h-11 flex-1 items-center justify-center rounded-control border-2 border-white/30 bg-black text-xs font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:border-white hover:bg-white/[0.04] disabled:opacity-40"
               >
                 Not now
               </button>
@@ -231,8 +229,8 @@ export function PromoteBestScanModal({
                 type="button"
                 onClick={submit}
                 disabled={status === 'submitting'}
-                style={{ touchAction: 'manipulation', borderRadius: 2 }}
-                className="inline-flex h-11 flex-[1.4] items-center justify-center gap-1.5 bg-white text-xs font-bold uppercase tracking-[0.18em] text-black transition-opacity hover:opacity-90 disabled:opacity-40"
+                style={{ touchAction: 'manipulation' }}
+                className="inline-flex h-11 flex-[1.4] items-center justify-center gap-1.5 rounded-control bg-white text-xs font-bold uppercase tracking-[0.18em] text-black transition-opacity hover:opacity-90 disabled:opacity-40"
               >
                 {status === 'submitting' ? (
                   <>

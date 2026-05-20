@@ -403,8 +403,8 @@ export function MogResultScreen({
             <button
               type="button"
               onClick={() => setReportOpen(true)}
-              style={{ touchAction: 'manipulation', borderRadius: 2 }}
-              className="inline-flex items-center gap-1.5 border border-white/20 bg-black px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/50 transition-colors hover:border-white hover:bg-white/[0.04] hover:text-white"
+              style={{ touchAction: 'manipulation' }}
+              className="inline-flex items-center gap-1.5 rounded-control border border-white/20 bg-black px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/50 transition-colors hover:border-white hover:bg-white/[0.04] hover:text-white"
             >
               <Flag size={11} aria-hidden />
               report @{opponent.display_name}
@@ -608,7 +608,7 @@ function ResultConfetti() {
             width: p.size,
             height: p.size,
             background: p.color,
-            borderRadius: 2,
+            borderRadius: 'var(--radius-control)',
           }}
         />
       ))}
@@ -858,7 +858,7 @@ function ResultPlayer({
             : 'border-white/20 bg-black'
       }`}
       style={{
-        borderRadius: 2,
+        borderRadius: 'var(--radius-panel)',
         boxShadow: won ? `0 0 48px -12px ${color}55, inset 0 0 0 1px ${color}33` : undefined,
       }}
     >
@@ -867,7 +867,7 @@ function ResultPlayer({
           initial={{ scale: 0, rotate: -10 }}
           animate={{ scale: 1, rotate: 0 }}
           transition={{ duration: 0.4, delay: 0.7, type: 'spring', stiffness: 280 }}
-          className="absolute right-3 top-3 inline-flex items-center gap-1 rounded-md bg-gradient-to-br from-amber-200 via-white to-amber-200 px-2 py-0.5 text-[11px] font-semibold text-black shadow-[0_0_18px_-2px_rgba(251,191,36,0.6)]"
+          className="absolute right-3 top-3 inline-flex items-center gap-1 rounded-control bg-gradient-to-br from-amber-200 via-white to-amber-200 px-2 py-0.5 text-[11px] font-semibold text-black shadow-[0_0_18px_-2px_rgba(251,191,36,0.6)]"
         >
           ✦ Winner
         </motion.span>
@@ -1417,7 +1417,7 @@ function PartyPodiumColumn({
       </div>
 
       {isYou && (
-        <span className="mt-1 inline-flex items-center rounded-md border border-white/30 bg-white/[0.08] px-1.5 py-0.5 text-[10px] font-semibold text-white">
+        <span className="mt-1 inline-flex items-center rounded-control border border-white/30 bg-white/[0.08] px-1.5 py-0.5 text-[10px] font-semibold text-white">
           You
         </span>
       )}
@@ -1428,7 +1428,7 @@ function PartyPodiumColumn({
           shadow on the rank numeral. Mirrors the leaderboard podium
           treatment. */}
       <div
-        className={`relative mt-3 flex w-full items-center justify-center overflow-hidden rounded-t-xl border-2 ${theme.borderColor} ${theme.bgGradient} ${theme.platformHeight}`}
+        className={`relative mt-3 flex w-full items-center justify-center overflow-hidden rounded-t-panel border-2 ${theme.borderColor} ${theme.bgGradient} ${theme.platformHeight}`}
       >
         <span
           aria-hidden
@@ -1475,8 +1475,7 @@ function HonorableMentionRow({
       initial={{ opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay: 0.7 + (rank - 4) * 0.08 }}
-      className="flex items-center gap-3 border border-white/15 bg-white/[0.02] px-3 py-2"
-      style={{ borderRadius: 2 }}
+      className="flex items-center gap-3 rounded-control border border-white/15 bg-white/[0.02] px-3 py-2"
     >
       <span className="font-num text-[14px] font-black tabular-nums text-white/60">
         {rank}.
@@ -1515,8 +1514,7 @@ function HonorableMentionRow({
       </span>
       {isYou && (
         <span
-          className="border border-white/25 bg-white/[0.06] px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-[0.22em] text-white"
-          style={{ borderRadius: 2 }}
+          className="rounded-control border border-white/25 bg-white/[0.06] px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-[0.22em] text-white"
         >
           YOU
         </span>

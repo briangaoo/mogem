@@ -231,7 +231,7 @@ export function CustomizationSection({
               type="button"
               onClick={() => void unequip()}
               disabled={pending === 'unequip-name_fx'}
-              className="rounded-sm border border-white/10 bg-white/[0.03] px-2.5 py-1 text-[11px] text-zinc-300 transition-colors hover:bg-white/[0.07] hover:text-white disabled:opacity-40"
+              className="rounded-control border border-white/10 bg-white/[0.03] px-2.5 py-1 text-[11px] text-zinc-300 transition-colors hover:bg-white/[0.07] hover:text-white disabled:opacity-40"
             >
               unequip
             </button>
@@ -306,7 +306,7 @@ function NameFxOption({
       type="button"
       onClick={onClick}
       disabled={pending}
-      className={`flex items-center justify-between gap-3 rounded-sm border px-3.5 py-2.5 text-left transition-all ${
+      className={`flex items-center justify-between gap-3 rounded-control border px-3.5 py-2.5 text-left transition-all ${
         equipped
           ? 'border-white bg-white/[0.08]'
           : 'border-white/10 bg-white/[0.02] hover:border-white/20 hover:bg-white/[0.05]'
@@ -339,7 +339,7 @@ function LockedNameFxOption({
   description: string | null;
 }) {
   return (
-    <div className="flex flex-col gap-1.5 rounded-sm border border-white/5 bg-white/[0.015] px-3.5 py-2.5">
+    <div className="flex flex-col gap-1.5 rounded-control border border-white/5 bg-white/[0.015] px-3.5 py-2.5">
       <div className="flex items-center justify-between gap-3">
         <span className="flex flex-col gap-1.5 opacity-60">
           <span className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.16em] text-zinc-500">

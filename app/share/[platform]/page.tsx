@@ -153,9 +153,8 @@ function SharePlatformPageInner() {
               ease: [0.34, 1.56, 0.64, 1],
               delay: 0.05,
             }}
-            className="flex h-20 w-20 items-center justify-center bg-white"
+            className="flex h-20 w-20 items-center justify-center rounded-control bg-white"
             style={{
-              borderRadius: 2,
               boxShadow: '0 0 0 1px rgba(255,255,255,0.5), 0 0 50px rgba(255,255,255,0.30)',
             }}
           >
@@ -175,7 +174,7 @@ function SharePlatformPageInner() {
                 <img
                   src={logoSrc}
                   alt={label}
-                  className="h-6 w-6 rounded-sm object-contain"
+                  className="h-6 w-6 rounded-control object-contain"
                 />
                 <span className="text-sm font-semibold text-white">
                   {label}

@@ -105,7 +105,7 @@ export function ConfirmModal({
             exit={{ y: 8, opacity: 0, scale: 0.97 }}
             transition={{ type: 'spring', stiffness: 320, damping: 28 }}
             onClick={(e) => e.stopPropagation()}
-            className="relative w-full max-w-sm overflow-hidden rounded-sm border border-white/15 bg-[#0c0c0c] p-6"
+            className="relative w-full max-w-sm overflow-hidden rounded-panel border border-white/15 bg-[#0c0c0c] p-6"
             style={{
               boxShadow:
                 'inset 0 1px 0 rgba(255,255,255,0.08), 0 30px 80px -20px rgba(0,0,0,0.7)',
@@ -154,7 +154,7 @@ export function ConfirmModal({
                 inputMode={input.inputMode}
                 autoComplete={input.autoComplete ?? 'off'}
                 spellCheck={false}
-                className={`mb-4 w-full rounded-sm border bg-white/[0.02] px-3 py-2 text-[14px] text-white placeholder:text-zinc-600 focus:outline-none focus:ring-2 ${
+                className={`mb-4 w-full rounded-control border bg-white/[0.02] px-3 py-2 text-[14px] text-white placeholder:text-zinc-600 focus:outline-none focus:ring-2 ${
                   danger
                     ? 'border-red-500/30 focus:border-red-500/50 focus:ring-red-500/15'
                     : 'border-white/10 focus:border-white focus:ring-white/15'
@@ -167,7 +167,7 @@ export function ConfirmModal({
                 type="button"
                 onClick={onCancel}
                 disabled={busy}
-                className="h-10 rounded-full border border-white/15 bg-white/[0.03] px-4 text-sm text-white transition-colors hover:bg-white/[0.07] disabled:opacity-50"
+                className="h-10 rounded-control border border-white/15 bg-white/[0.03] px-4 text-sm text-white transition-colors hover:bg-white/[0.07] disabled:opacity-50"
               >
                 {cancelLabel}
               </button>
@@ -175,7 +175,7 @@ export function ConfirmModal({
                 type="button"
                 onClick={handleConfirm}
                 disabled={busy || !valid}
-                className={`h-10 rounded-full px-4 text-sm font-semibold transition-colors ${
+                className={`h-10 rounded-control px-4 text-sm font-semibold transition-colors ${
                   danger
                     ? 'bg-red-500 text-white hover:bg-red-400'
                     : 'bg-foreground text-background hover:opacity-90'

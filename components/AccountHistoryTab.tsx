@@ -202,7 +202,7 @@ export function AccountHistoryTab({
                 setResultFilter('all');
                 setOpponent('');
               }}
-              className="inline-flex items-center gap-1 rounded-sm border border-white/10 bg-white/[0.03] px-2 py-1 text-[11px] text-zinc-300 hover:bg-white/[0.07] hover:text-white"
+              className="inline-flex items-center gap-1 rounded-control border border-white/10 bg-white/[0.03] px-2 py-1 text-[11px] text-zinc-300 hover:bg-white/[0.07] hover:text-white"
             >
               <X size={11} aria-hidden /> reset
             </button>
@@ -251,7 +251,7 @@ export function AccountHistoryTab({
               </FilterChip>
             ))}
           </div>
-          <div className="flex items-stretch overflow-hidden rounded-sm border border-white/20 bg-white/[0.02] focus-within:border-white focus-within:ring-2 focus-within:ring-white/15">
+          <div className="flex items-stretch overflow-hidden rounded-control border border-white/20 bg-white/[0.02] focus-within:border-white focus-within:ring-2 focus-within:ring-white/15">
             <span className="flex items-center pl-3 pr-1 text-zinc-500">
               <Search size={13} aria-hidden />
             </span>
@@ -333,7 +333,7 @@ export function AccountHistoryTab({
           </div>
         </Section>
       ) : status === 'error' ? (
-        <div className="border-2 border-red-500/40 bg-red-500/[0.06] p-3 text-[11px] uppercase tracking-[0.14em] text-red-200" style={{ borderRadius: 2 }}>
+        <div className="rounded-control border-2 border-red-500/40 bg-red-500/[0.06] p-3 text-[11px] uppercase tracking-[0.14em] text-red-200">
           {errorMsg}
         </div>
       ) : entries.length === 0 ? (
@@ -414,8 +414,8 @@ function FilterChip({
     <button
       type="button"
       onClick={onClick}
-      style={{ touchAction: 'manipulation', borderRadius: 2 }}
-      className={`border-2 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] transition-colors ${
+      style={{ touchAction: 'manipulation' }}
+      className={`rounded-control border-2 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] transition-colors ${
         active
           ? activeBorder
           : 'border-white/25 bg-black text-white/60 hover:border-white/50 hover:text-white'
@@ -436,7 +436,7 @@ function SummaryChip({
   color: string;
 }) {
   return (
-    <span className="inline-flex items-center gap-1.5 rounded-sm border border-white/10 bg-white/[0.025] px-2 py-1">
+    <span className="inline-flex items-center gap-1.5 rounded-control border border-white/10 bg-white/[0.025] px-2 py-1">
       <span className="text-[10px] text-zinc-500">{label}</span>
       <span className={`font-num text-[12px] font-semibold tabular-nums ${color}`}>
         {value}
@@ -530,11 +530,10 @@ function HistoryRow({ entry }: { entry: HistoryEntry }) {
         aria-expanded={canExpand ? tapped : undefined}
       >
         <span
-          className="inline-flex h-6 min-w-[24px] flex-shrink-0 items-center justify-center px-1.5 font-num text-[11px] font-bold tabular-nums"
+          className="inline-flex h-6 min-w-[24px] flex-shrink-0 items-center justify-center rounded-control px-1.5 font-num text-[11px] font-bold tabular-nums"
           style={{
             background: rankStyle.bg,
             color: rankStyle.text,
-            borderRadius: 2,
             border: `1px solid ${rankStyle.border}`,
           }}
           title={`${rank} of ${total}`}
@@ -589,11 +588,10 @@ function HistoryRow({ entry }: { entry: HistoryEntry }) {
                 style={{ borderColor: placeStyle.border }}
               >
                 <span
-                  className="font-num inline-flex h-5 min-w-[20px] items-center justify-center px-1 text-[10px] font-bold tabular-nums"
+                  className="font-num inline-flex h-5 min-w-[20px] items-center justify-center rounded-control px-1 text-[10px] font-bold tabular-nums"
                   style={{
                     background: placeStyle.bg,
                     color: placeStyle.text,
-                    borderRadius: 2,
                   }}
                 >
                   {placeRank}

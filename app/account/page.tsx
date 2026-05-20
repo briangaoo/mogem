@@ -288,7 +288,7 @@ function AccountPageInner() {
           {prefetched.me?.profile?.display_name && (
             <Link
               href={`/@${prefetched.me.profile.display_name}`}
-              className="ml-auto rounded-md border border-white/20 bg-black/40 px-3 py-2 text-[12px] font-medium text-white/80 transition-all duration-200 hover:border-white/40 hover:bg-white/[0.05] hover:text-white"
+              className="ml-auto rounded-control border border-white/20 bg-black/40 px-3 py-2 text-[12px] font-medium text-white/80 transition-all duration-200 hover:border-white/40 hover:bg-white/[0.05] hover:text-white"
             >
               View public profile
             </Link>
@@ -322,7 +322,7 @@ function AccountPageInner() {
                 {active && (
                   <span
                     aria-hidden
-                    className="absolute -bottom-px left-0 right-0 h-0.5 rounded-t bg-white shadow-[0_0_16px_rgba(255,255,255,0.6)]"
+                    className="absolute -bottom-px left-0 right-0 h-0.5 rounded-t-control bg-white shadow-[0_0_16px_rgba(255,255,255,0.6)]"
                   />
                 )}
               </button>

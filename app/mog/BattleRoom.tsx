@@ -655,7 +655,7 @@ function BattleInterior({
       {/* Active-window timer (top centre). */}
       {phase === 'active' && (
         <div
-          className="pointer-events-none fixed left-1/2 top-4 z-30 -translate-x-1/2 rounded-full border border-white/15 bg-black/70 px-3 py-1 font-num text-sm font-semibold tabular-nums backdrop-blur"
+          className="pointer-events-none fixed left-1/2 top-4 z-30 -translate-x-1/2 rounded-control border border-white/15 bg-black/70 px-3 py-1 font-num text-sm font-semibold tabular-nums backdrop-blur"
           style={{ paddingTop: 'max(env(safe-area-inset-top), 4px)' }}
         >
           {remainingSec}s
@@ -667,10 +667,9 @@ function BattleInterior({
           they refresh — without this they'd silently score 0. */}
       {cameraWarning && (
         <div
-          className="fixed left-1/2 z-40 flex -translate-x-1/2 items-center gap-2 rounded-md border border-red-500/60 bg-black/85 px-3 py-2 text-[12px] font-semibold text-red-200 backdrop-blur"
+          className="fixed left-1/2 z-40 flex -translate-x-1/2 items-center gap-2 rounded-control border border-red-500/60 bg-black/85 px-3 py-2 text-[12px] font-semibold text-red-200 backdrop-blur"
           style={{
             top: 'calc(max(env(safe-area-inset-top), 16px) + 40px)',
-            borderRadius: 2,
           }}
           role="alert"
         >
@@ -773,7 +772,7 @@ function TileContents({
       <ConnectionBars participant={trackRef.participant} />
       {hasLeft && (
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/40">
-          <span className="rounded-full border border-rose-400/40 bg-rose-500/15 px-3 py-1 text-[12px] font-medium text-rose-200 backdrop-blur">
+          <span className="rounded-control border border-rose-400/40 bg-rose-500/15 px-3 py-1 text-[12px] font-medium text-rose-200 backdrop-blur">
             Left
           </span>
         </div>
@@ -1410,11 +1409,8 @@ function ScoreOverlay({
     <Link
       href={`/@${displayName}`}
       onClick={(e) => e.stopPropagation()}
-      className="group absolute left-3 top-3 z-10 flex w-[180px] flex-col gap-3 bg-black px-3.5 py-3 transition-colors hover:bg-black/95"
-      style={{
-        border: `2px solid ${color}`,
-        borderRadius: 2,
-      }}
+      className="group absolute left-3 top-3 z-10 flex w-[180px] flex-col gap-3 rounded-control bg-black px-3.5 py-3 transition-colors hover:bg-black/95"
+      style={{ border: `2px solid ${color}` }}
     >
       {/* Header: LIVE pip */}
       <div className="relative flex items-center justify-between">
@@ -1544,7 +1540,7 @@ function ConnectionBars({ participant }: { participant: Participant }) {
   return (
     <div
       aria-label={`connection ${quality}`}
-      className="pointer-events-none absolute bottom-3 right-3 z-10 flex items-end gap-1 rounded-full bg-black/55 px-2 py-1.5 backdrop-blur"
+      className="pointer-events-none absolute bottom-3 right-3 z-10 flex items-end gap-1 rounded-control bg-black/55 px-2 py-1.5 backdrop-blur"
       style={{
         boxShadow:
           '0 4px 14px rgba(0,0,0,0.45), inset 0 0 0 0.5px rgba(255,255,255,0.18)',
@@ -1553,7 +1549,7 @@ function ConnectionBars({ participant }: { participant: Participant }) {
       {[0, 1, 2].map((i) => (
         <span
           key={i}
-          className="block w-[3px] rounded-sm transition-colors"
+          className="block w-[3px] rounded-control transition-colors"
           style={{
             height: 6 + i * 4,
             backgroundColor: i < active ? color : 'rgba(255,255,255,0.18)',

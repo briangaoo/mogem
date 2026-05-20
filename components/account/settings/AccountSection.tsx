@@ -219,13 +219,13 @@ function EmailBlock({ email }: { email: string | null | undefined }) {
               autoCapitalize="none"
               autoComplete="email"
               spellCheck={false}
-              className="flex-1 rounded-sm border border-white/10 bg-white/[0.02] px-3 py-2 text-[13px] text-white placeholder:text-zinc-600 focus:border-white focus:outline-none focus:ring-2 focus:ring-white/15"
+              className="flex-1 rounded-control border border-white/10 bg-white/[0.02] px-3 py-2 text-[13px] text-white placeholder:text-zinc-600 focus:border-white focus:outline-none focus:ring-2 focus:ring-white/15"
             />
             <button
               type="button"
               onClick={onSendLink}
               disabled={!dirty || state.kind === 'pending'}
-              className="rounded-sm bg-white px-4 py-2 text-[12px] font-semibold text-black transition-all hover:bg-zinc-100 hover:shadow-[0_0_0_2px_rgba(255,255,255,0.20)] disabled:opacity-40 disabled:hover:shadow-none"
+              className="rounded-control bg-white px-4 py-2 text-[12px] font-semibold text-black transition-all hover:bg-zinc-100 hover:shadow-[0_0_0_2px_rgba(255,255,255,0.20)] disabled:opacity-40 disabled:hover:shadow-none"
             >
               {state.kind === 'pending' ? 'sending…' : 'send link'}
             </button>
@@ -250,7 +250,7 @@ function EmailBlock({ email }: { email: string | null | undefined }) {
             type="button"
             onClick={onGoogleReAuth}
             disabled={state.kind === 'pending'}
-            className="inline-flex h-10 items-center justify-center gap-2 rounded-sm border border-white/10 bg-white/[0.04] px-3 text-[13px] font-medium text-white transition-colors hover:bg-white/[0.08] disabled:opacity-40"
+            className="inline-flex h-10 items-center justify-center gap-2 rounded-control border border-white/10 bg-white/[0.04] px-3 text-[13px] font-medium text-white transition-colors hover:bg-white/[0.08] disabled:opacity-40"
           >
             open google · sign in with the new email
           </button>
@@ -537,7 +537,7 @@ function AuthMethodRow({
               type="button"
               onClick={onRemove}
               disabled={pending || isOnlyMethod}
-              className="rounded-sm border border-white/10 bg-white/[0.03] px-3 py-1.5 text-[11px] text-zinc-200 transition-colors hover:bg-white/[0.07] hover:text-white disabled:cursor-not-allowed disabled:opacity-40"
+              className="rounded-control border border-white/10 bg-white/[0.03] px-3 py-1.5 text-[11px] text-zinc-200 transition-colors hover:bg-white/[0.07] hover:text-white disabled:cursor-not-allowed disabled:opacity-40"
             >
               {pending ? '…' : 'remove'}
             </button>
@@ -547,7 +547,7 @@ function AuthMethodRow({
             type="button"
             onClick={onAdd}
             disabled={pending}
-            className="rounded-sm bg-foreground px-3 py-1.5 text-[11px] font-semibold text-background transition-colors hover:opacity-90 disabled:opacity-40"
+            className="rounded-control bg-foreground px-3 py-1.5 text-[11px] font-semibold text-background transition-colors hover:opacity-90 disabled:opacity-40"
           >
             {pending ? '…' : 'add'}
           </button>
@@ -637,7 +637,7 @@ function ActiveSessionsBlock() {
           <button
             type="button"
             onClick={onKickOthers}
-            className="rounded-sm border border-red-500/30 bg-red-500/[0.06] px-2.5 py-1 text-[11px] font-medium text-red-200 transition-colors hover:bg-red-500/[0.12]"
+            className="rounded-control border border-red-500/30 bg-red-500/[0.06] px-2.5 py-1 text-[11px] font-medium text-red-200 transition-colors hover:bg-red-500/[0.12]"
           >
             kick others
           </button>
@@ -667,7 +667,7 @@ function ActiveSessionsBlock() {
               type="button"
               onClick={() => void onKick(s.id)}
               disabled={kicking === s.id}
-              className="rounded-sm border border-red-500/30 bg-red-500/[0.04] px-3 py-1.5 text-[11px] text-red-200 transition-colors hover:bg-red-500/[0.10] disabled:opacity-40"
+              className="rounded-control border border-red-500/30 bg-red-500/[0.04] px-3 py-1.5 text-[11px] text-red-200 transition-colors hover:bg-red-500/[0.10] disabled:opacity-40"
             >
               {kicking === s.id ? 'kicking…' : 'kick'}
             </button>
@@ -825,7 +825,7 @@ function TwoFactorBlock({ initialEnabled }: { initialEnabled: boolean }) {
             type="button"
             onClick={startSetup}
             disabled={pending}
-            className="rounded-sm bg-white px-4 py-2 text-[12px] font-semibold text-black transition-all hover:bg-zinc-100 hover:shadow-[0_0_0_2px_rgba(255,255,255,0.20)] disabled:opacity-40 disabled:hover:shadow-none"
+            className="rounded-control bg-white px-4 py-2 text-[12px] font-semibold text-black transition-all hover:bg-zinc-100 hover:shadow-[0_0_0_2px_rgba(255,255,255,0.20)] disabled:opacity-40 disabled:hover:shadow-none"
           >
             {pending ? 'starting…' : 'set up'}
           </button>
@@ -843,7 +843,7 @@ function TwoFactorBlock({ initialEnabled }: { initialEnabled: boolean }) {
             <TotpQrCode uri={setupUri} />
             <a
               href={setupUri}
-              className="inline-flex items-center gap-1.5 rounded-sm border border-white/10 bg-white/[0.02] px-2.5 py-1.5 text-[11px] text-zinc-200 hover:bg-white/[0.06]"
+              className="inline-flex items-center gap-1.5 rounded-control border border-white/10 bg-white/[0.02] px-2.5 py-1.5 text-[11px] text-zinc-200 hover:bg-white/[0.06]"
             >
               <KeyRound size={11} aria-hidden /> open in authenticator app
             </a>
@@ -851,14 +851,14 @@ function TwoFactorBlock({ initialEnabled }: { initialEnabled: boolean }) {
               <summary className="cursor-pointer text-[11px] text-zinc-500 hover:text-zinc-300">
                 can&apos;t scan? show secret to type manually
               </summary>
-              <div className="mt-2 flex items-center gap-2 rounded-sm border border-white/10 bg-white/[0.02] px-3 py-2.5">
+              <div className="mt-2 flex items-center gap-2 rounded-control border border-white/10 bg-white/[0.02] px-3 py-2.5">
                 <code className="flex-1 truncate font-num text-[13px] tabular-nums uppercase text-white">
                   {formatSecretGroups(setupSecret)}
                 </code>
                 <button
                   type="button"
                   onClick={copySecret}
-                  className="inline-flex items-center gap-1 rounded-sm border border-white/10 bg-white/[0.03] px-2.5 py-1.5 text-[11px] text-zinc-200 hover:bg-white/[0.07]"
+                  className="inline-flex items-center gap-1 rounded-control border border-white/10 bg-white/[0.03] px-2.5 py-1.5 text-[11px] text-zinc-200 hover:bg-white/[0.07]"
                 >
                   <Copy size={11} aria-hidden /> copy
                 </button>
@@ -875,13 +875,13 @@ function TwoFactorBlock({ initialEnabled }: { initialEnabled: boolean }) {
               value={code}
               onChange={(e) => setCode(e.target.value.replace(/\D/g, '').slice(0, 6))}
               placeholder="123456"
-              className="font-num flex-1 rounded-sm border border-white/10 bg-white/[0.02] px-3 py-2 text-center text-lg tabular-nums text-white tracking-[0.3em] placeholder:text-zinc-600 focus:border-white focus:outline-none focus:ring-2 focus:ring-white/15"
+              className="font-num flex-1 rounded-control border border-white/10 bg-white/[0.02] px-3 py-2 text-center text-lg tabular-nums text-white tracking-[0.3em] placeholder:text-zinc-600 focus:border-white focus:outline-none focus:ring-2 focus:ring-white/15"
             />
             <button
               type="button"
               onClick={verifySetup}
               disabled={code.length !== 6 || pending}
-              className="rounded-sm bg-white px-4 py-2 text-[12px] font-semibold text-black transition-all hover:bg-zinc-100 disabled:opacity-40"
+              className="rounded-control bg-white px-4 py-2 text-[12px] font-semibold text-black transition-all hover:bg-zinc-100 disabled:opacity-40"
             >
               {pending ? 'verifying…' : 'verify'}
             </button>
@@ -893,7 +893,7 @@ function TwoFactorBlock({ initialEnabled }: { initialEnabled: boolean }) {
       {status === 'enabled' && (
         <div className="flex flex-col gap-3 border-t border-white/5 px-4 py-4">
           {backupCodes && (
-            <div className="rounded-sm border border-white/40 bg-white/[0.04] p-4">
+            <div className="rounded-control border border-white/40 bg-white/[0.04] p-4">
               <div className="mb-2 inline-flex items-center gap-1.5 text-[12px] font-medium text-white">
                 <AlertTriangle size={12} aria-hidden /> save your backup codes
               </div>
@@ -905,7 +905,7 @@ function TwoFactorBlock({ initialEnabled }: { initialEnabled: boolean }) {
                 {backupCodes.map((c) => (
                   <code
                     key={c}
-                    className="select-all rounded-sm border border-white/20 bg-black/40 px-2 py-1.5 text-center uppercase"
+                    className="select-all rounded-control border border-white/20 bg-black/40 px-2 py-1.5 text-center uppercase"
                   >
                     {c}
                   </code>
@@ -928,7 +928,7 @@ function TwoFactorBlock({ initialEnabled }: { initialEnabled: boolean }) {
               type="button"
               onClick={disable}
               disabled={pending}
-              className="inline-flex items-center gap-1.5 rounded-sm border border-red-500/30 bg-red-500/[0.04] px-3 py-1.5 text-[11px] text-red-200 transition-colors hover:bg-red-500/[0.10] disabled:opacity-40"
+              className="inline-flex items-center gap-1.5 rounded-control border border-red-500/30 bg-red-500/[0.04] px-3 py-1.5 text-[11px] text-red-200 transition-colors hover:bg-red-500/[0.10] disabled:opacity-40"
             >
               <X size={11} aria-hidden /> disable
             </button>
@@ -1005,7 +1005,7 @@ function TotpQrCode({ uri }: { uri: string }) {
   }
   if (!dataUrl) {
     return (
-      <div className="flex h-[220px] w-[220px] items-center justify-center rounded-sm border border-white/10 bg-white/[0.02]">
+      <div className="flex h-[220px] w-[220px] items-center justify-center rounded-control border border-white/10 bg-white/[0.02]">
         <Loader2 size={18} className="animate-spin text-zinc-500" aria-hidden />
       </div>
     );
@@ -1019,7 +1019,7 @@ function TotpQrCode({ uri }: { uri: string }) {
       alt="2FA QR code"
       width={220}
       height={220}
-      className="rounded-sm border border-white/10 bg-white"
+      className="rounded-control border border-white/10 bg-white"
     />
   );
 }

@@ -41,15 +41,13 @@ export function AchievementToastContainer() {
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: 60, opacity: 0 }}
             transition={{ type: 'spring', stiffness: 320, damping: 26 }}
-            className="pointer-events-auto flex w-72 items-start gap-3 border-2 border-amber-400 bg-black p-3"
+            className="pointer-events-auto flex w-72 items-start gap-3 rounded-control border-2 border-amber-400 bg-black p-3"
             style={{
-              borderRadius: 2,
               boxShadow: '0 8px 24px rgba(251,191,36,0.25)',
             }}
           >
             <span
-              className="flex h-9 w-9 flex-shrink-0 items-center justify-center bg-amber-400"
-              style={{ borderRadius: 2 }}
+              className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-control bg-amber-400"
             >
               <Sparkles size={16} className="text-black" aria-hidden />
             </span>

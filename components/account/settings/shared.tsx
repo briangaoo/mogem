@@ -96,13 +96,13 @@ export function Section({
   return (
     <section
       id={id}
-      className="relative rounded-xl border border-white/10 bg-zinc-950/60"
+      className="relative rounded-panel border border-white/10 bg-zinc-950/60"
     >
       <header className="relative flex items-center gap-3.5 px-5 pb-3 pt-5">
         {Icon && (
           <span
             aria-hidden
-            className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md border border-white/15 bg-white/[0.04]"
+            className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-control border border-white/15 bg-white/[0.04]"
           >
             <Icon size={18} aria-hidden className="text-white" />
           </span>
@@ -172,8 +172,8 @@ export function Toggle({
       aria-label={ariaLabel}
       disabled={disabled}
       onClick={() => onChange(!on)}
-      style={{ touchAction: 'manipulation', borderRadius: 2 }}
-      className={`relative inline-flex h-7 w-[52px] flex-shrink-0 items-center border-2 transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-40 ${
+      style={{ touchAction: 'manipulation' }}
+      className={`relative inline-flex h-7 w-[52px] flex-shrink-0 items-center rounded-control border-2 transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-40 ${
         on
           ? 'border-white bg-white'
           : 'border-white/30 bg-black hover:border-white/50'
@@ -181,10 +181,9 @@ export function Toggle({
     >
       <span
         aria-hidden
-        className={`inline-block h-4 w-4 transition-transform duration-200 ease-out ${
+        className={`inline-block h-4 w-4 rounded-control transition-transform duration-200 ease-out ${
           on ? 'translate-x-[28px] bg-black' : 'translate-x-1 bg-white/60'
         }`}
-        style={{ borderRadius: 1 }}
       />
     </button>
   );

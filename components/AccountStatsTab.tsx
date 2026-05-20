@@ -168,7 +168,7 @@ export function AccountStatsTab({
   if (!user || !loaded) return null;
   if (!profile) {
     return (
-      <div className="border-2 border-white/20 bg-black p-4 text-center text-[11px] uppercase tracking-[0.18em] text-white/50" style={{ borderRadius: 2 }}>
+      <div className="rounded-control border-2 border-white/20 bg-black p-4 text-center text-[11px] uppercase tracking-[0.18em] text-white/50">
         COULD NOT LOAD PROFILE
       </div>
     );
@@ -472,7 +472,7 @@ function RecentBattlesSection({
                       ? 'bg-zinc-400'
                       : 'bg-rose-500/80'
               }`}
-              style={{ borderRadius: 1 }}
+              style={{ borderRadius: 'var(--radius-control)' }}
             />
           ))}
         </div>
@@ -616,8 +616,7 @@ function BestScanSection({
           <img
             src={leaderboardPhoto}
             alt=""
-            className="h-16 w-16 flex-shrink-0 border-2 border-white/30 object-cover"
-            style={{ borderRadius: 2 }}
+            className="h-16 w-16 flex-shrink-0 rounded-control border-2 border-white/30 object-cover"
           />
           <div className="flex flex-1 items-center gap-3">
             <span

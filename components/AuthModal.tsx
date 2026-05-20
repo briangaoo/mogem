@@ -168,7 +168,7 @@ export function AuthModal({ open, onClose, context, next }: Props) {
             exit={{ y: 12, opacity: 0, scale: 0.97 }}
             transition={{ type: 'spring', stiffness: 320, damping: 28 }}
             onClick={(e) => e.stopPropagation()}
-            className="relative w-full max-w-sm overflow-hidden rounded-sm border border-white/15 p-6"
+            className="relative w-full max-w-sm overflow-hidden rounded-panel border border-white/15 p-6"
             style={{
               backgroundColor: '#0c0c0c',
               boxShadow:
@@ -256,7 +256,7 @@ export function AuthModal({ open, onClose, context, next }: Props) {
                       type="button"
                       onClick={() => setEmailMode(true)}
                       style={{ touchAction: 'manipulation' }}
-                      className="flex h-12 w-full items-center justify-center gap-2 rounded-sm border border-white/15 bg-white/[0.04] text-sm font-medium text-white transition-colors hover:bg-white/[0.08]"
+                      className="flex h-12 w-full items-center justify-center gap-2 rounded-control border border-white/15 bg-white/[0.04] text-sm font-medium text-white transition-colors hover:bg-white/[0.08]"
                     >
                       <Mail size={14} aria-hidden /> Email me a link
                     </button>
@@ -268,7 +268,7 @@ export function AuthModal({ open, onClose, context, next }: Props) {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="you@example.com"
-                        className="rounded-sm border border-white/15 bg-white/[0.04] px-4 py-3 text-sm text-white placeholder:text-zinc-500 focus:border-white/30 focus:outline-none"
+                        className="rounded-control border border-white/15 bg-white/[0.04] px-4 py-3 text-sm text-white placeholder:text-zinc-500 focus:border-white/30 focus:outline-none"
                         autoComplete="email"
                         onKeyDown={(e) => {
                           if (e.key === 'Enter') void sendMagicLink();
@@ -279,7 +279,7 @@ export function AuthModal({ open, onClose, context, next }: Props) {
                         onClick={sendMagicLink}
                         disabled={status === 'sending'}
                         style={{ touchAction: 'manipulation' }}
-                        className="h-11 rounded-full bg-white text-sm font-semibold text-black transition-colors hover:bg-zinc-100 disabled:opacity-50"
+                        className="h-11 rounded-control bg-white text-sm font-semibold text-black transition-colors hover:bg-zinc-100 disabled:opacity-50"
                       >
                         {status === 'sending' ? 'Sending…' : 'Send link'}
                       </button>
@@ -364,11 +364,11 @@ function ProviderButton({
     return (
       <div
         aria-disabled="true"
-        className={`relative flex h-12 w-full cursor-not-allowed items-center justify-center gap-3 rounded-sm text-sm font-semibold opacity-50 ${baseColors}`}
+        className={`relative flex h-12 w-full cursor-not-allowed items-center justify-center gap-3 rounded-control text-sm font-semibold opacity-50 ${baseColors}`}
       >
         {icon}
         <span>{label}</span>
-        <span className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full border border-white/15 bg-black/60 px-2 py-0.5 text-[9px] font-medium uppercase tracking-[0.16em] text-zinc-300">
+        <span className="absolute right-3 top-1/2 -translate-y-1/2 rounded-control border border-white/15 bg-black/60 px-2 py-0.5 text-[9px] font-medium uppercase tracking-[0.16em] text-zinc-300">
           soon
         </span>
       </div>
@@ -380,7 +380,7 @@ function ProviderButton({
       type="button"
       onClick={onClick}
       style={{ touchAction: 'manipulation' }}
-      className={`flex h-12 w-full items-center justify-center gap-3 rounded-sm text-sm font-semibold shadow-md transition-colors ${baseColors} ${enabledHover}`}
+      className={`flex h-12 w-full items-center justify-center gap-3 rounded-control text-sm font-semibold shadow-md transition-colors ${baseColors} ${enabledHover}`}
     >
       {icon}
       {label}
@@ -454,14 +454,14 @@ function InboxLink({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`open ${label}`}
-      className="flex h-14 items-center justify-center rounded-sm bg-white/[0.04] transition-colors hover:bg-white/[0.10]"
+      className="flex h-14 items-center justify-center rounded-control bg-white/[0.04] transition-colors hover:bg-white/[0.10]"
     >
       <Image
         src={src}
         alt={label}
         width={36}
         height={36}
-        className="h-9 w-9 rounded-sm object-cover"
+        className="h-9 w-9 rounded-control object-cover"
       />
     </a>
   );

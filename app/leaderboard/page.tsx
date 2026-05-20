@@ -140,7 +140,7 @@ function TabBar({
 }) {
   return (
     <div
-      className="mb-5 grid grid-cols-2 gap-0 overflow-hidden rounded-lg border border-white/15 bg-black/60 p-0 backdrop-blur"
+      className="mb-5 grid grid-cols-2 gap-0 overflow-hidden rounded-control border border-white/15 bg-black/60 p-0 backdrop-blur"
     >
       <TabButton
         active={tab === 'scans'}
@@ -254,7 +254,7 @@ function ScansTab({ initial }: { initial: ScanApiResponse | null }) {
 
   if (status === 'unconfigured') {
     return (
-      <div className="border-2 border-white/20 bg-black p-6 text-center" style={{ borderRadius: 2 }}>
+      <div className="rounded-control border-2 border-white/20 bg-black p-6 text-center">
         <p className="text-sm font-semibold text-white">Leaderboard not yet available</p>
         <p className="mt-2 text-[12px] text-white/50">
           The Supabase backend hasn&apos;t been configured for this deployment.
@@ -264,14 +264,14 @@ function ScansTab({ initial }: { initial: ScanApiResponse | null }) {
   }
   if (status === 'error') {
     return (
-      <div className="border-2 border-red-500/40 bg-red-500/[0.06] p-4 text-sm uppercase tracking-[0.14em] text-red-200" style={{ borderRadius: 2 }}>
+      <div className="rounded-control border-2 border-red-500/40 bg-red-500/[0.06] p-4 text-sm uppercase tracking-[0.14em] text-red-200">
         {errorMsg}
       </div>
     );
   }
   if (entries.length === 0) {
     return (
-      <div className="border-2 border-white/20 bg-black p-6 text-center" style={{ borderRadius: 2 }}>
+      <div className="rounded-control border-2 border-white/20 bg-black p-6 text-center">
         <p className="text-sm font-semibold text-white">No entries yet</p>
         <p className="mt-2 text-[12px] text-white/50">Be the first.</p>
       </div>
@@ -380,14 +380,14 @@ function BattlesTab({ initial }: { initial: BattleApiResponse | null }) {
 
   if (status === 'error') {
     return (
-      <div className="border-2 border-red-500/40 bg-red-500/[0.06] p-4 text-sm uppercase tracking-[0.14em] text-red-200" style={{ borderRadius: 2 }}>
+      <div className="rounded-control border-2 border-red-500/40 bg-red-500/[0.06] p-4 text-sm uppercase tracking-[0.14em] text-red-200">
         {errorMsg}
       </div>
     );
   }
   if (entries.length === 0) {
     return (
-      <div className="border-2 border-white/20 bg-black p-6 text-center" style={{ borderRadius: 2 }}>
+      <div className="rounded-control border-2 border-white/20 bg-black p-6 text-center">
         <p className="text-sm font-semibold text-white">No battles yet</p>
         <p className="mt-2 text-[12px] text-white/50">Queue up to climb the ladder.</p>
       </div>
@@ -575,7 +575,7 @@ function PodiumColumn({
           existing shimmer sweep on 1st. Body gradient + medal border
           carry the gold/silver/bronze identity. */}
       <div
-        className={`relative mt-3 flex w-full items-center justify-center overflow-hidden rounded-t-xl border-2 ${theme.borderColor} ${theme.bgGradient} ${theme.platformHeight} transition-colors duration-300 group-hover:brightness-110`}
+        className={`relative mt-3 flex w-full items-center justify-center overflow-hidden rounded-t-panel border-2 ${theme.borderColor} ${theme.bgGradient} ${theme.platformHeight} transition-colors duration-300 group-hover:brightness-110`}
       >
         {/* Soft halo at the top edge — light spilling down. Replaces
             the hard 1px medal stripe. Radial gradient from the top
@@ -839,8 +839,7 @@ function ScanRow({ row, rank }: { row: LeaderboardRow; rank: number }) {
     <li>
       <Link
         href={`/@${row.name}`}
-        className="flex items-center gap-3 border border-white/20 bg-black p-3 transition-colors hover:border-white/50 hover:bg-white/[0.03]"
-        style={{ borderRadius: 2 }}
+        className="flex items-center gap-3 rounded-control border border-white/20 bg-black p-3 transition-colors hover:border-white/50 hover:bg-white/[0.03]"
       >
         <div
           className="w-7 text-right font-num text-sm font-bold tabular-nums text-white/50"
@@ -909,8 +908,7 @@ function BattleRow({ row, rank }: { row: BattleRow; rank: number }) {
     <li>
       <Link
         href={`/@${row.display_name}`}
-        className="flex items-center gap-3 border border-white/20 bg-black p-3 transition-colors hover:border-white/50 hover:bg-white/[0.03]"
-        style={{ borderRadius: 2 }}
+        className="flex items-center gap-3 rounded-control border border-white/20 bg-black p-3 transition-colors hover:border-white/50 hover:bg-white/[0.03]"
       >
         <div
           className="w-7 text-right font-num text-sm font-bold tabular-nums text-white/50"

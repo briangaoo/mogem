@@ -120,7 +120,7 @@ function ProfileHeader({
 
   return (
     <section
-      className="relative overflow-hidden rounded-sm border border-white/10"
+      className="relative overflow-hidden rounded-panel border border-white/10"
       style={{
         background:
           'linear-gradient(180deg, rgba(255,255,255,0.045) 0%, rgba(255,255,255,0.015) 100%)',
@@ -202,7 +202,7 @@ function ProfileHeader({
             {tier?.isGradient && (
               <span
                 aria-label="elite tier"
-                className="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.18em] text-white"
+                className="inline-flex items-center gap-1 rounded-control px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.18em] text-white"
                 style={{
                   background:
                     'linear-gradient(135deg, rgba(34,211,238,0.30), rgba(168,85,247,0.30))',
@@ -344,8 +344,8 @@ function FollowButton({
       style={{ touchAction: 'manipulation' }}
       className={
         following
-          ? 'inline-flex h-9 items-center rounded-full border border-white/15 bg-transparent px-4 text-[14px] font-semibold text-foreground transition-colors hover:border-white hover:bg-white/[0.06] hover:text-white disabled:opacity-50'
-          : 'inline-flex h-9 items-center rounded-full bg-foreground px-4 text-[14px] font-semibold text-[#0a0a0a] transition-transform hover:scale-[1.03] disabled:opacity-50'
+          ? 'inline-flex h-9 items-center rounded-control border border-white/15 bg-transparent px-4 text-[14px] font-semibold text-foreground transition-colors hover:border-white hover:bg-white/[0.06] hover:text-white disabled:opacity-50'
+          : 'inline-flex h-9 items-center rounded-control bg-foreground px-4 text-[14px] font-semibold text-[#0a0a0a] transition-transform hover:scale-[1.03] disabled:opacity-50'
       }
     >
       {following ? 'following' : 'follow'}
@@ -357,7 +357,7 @@ function EditProfileButton() {
   return (
     <Link
       href="/account"
-      className="inline-flex h-9 items-center rounded-full border border-white/15 bg-transparent px-4 text-[14px] font-semibold text-foreground transition-colors hover:bg-white/[0.06]"
+      className="inline-flex h-9 items-center rounded-control border border-white/15 bg-transparent px-4 text-[14px] font-semibold text-foreground transition-colors hover:bg-white/[0.06]"
     >
       edit profile
     </Link>
@@ -502,9 +502,9 @@ function TierCard({ data }: { data: PublicProfileData }) {
     : (tier?.color ?? 'rgba(245,245,245,0.20)');
 
   return (
-    <div className="rounded-sm">
+    <div className="rounded-panel">
       <section
-        className="relative overflow-hidden rounded-sm border"
+        className="relative overflow-hidden rounded-panel border"
         style={{
           borderColor: `${accentColor}40`,
           background:
@@ -525,7 +525,7 @@ function TierCard({ data }: { data: PublicProfileData }) {
         <div className="relative grid gap-5 p-5 sm:grid-cols-[auto_1fr] sm:items-center sm:gap-6 sm:p-7">
           {data.best_scan_photo ? (
             <div
-              className="relative mx-auto h-32 w-32 flex-shrink-0 overflow-hidden rounded-sm sm:mx-0 sm:h-36 sm:w-36"
+              className="relative mx-auto h-32 w-32 flex-shrink-0 overflow-hidden rounded-control sm:mx-0 sm:h-36 sm:w-36"
               style={{
                 boxShadow: `0 0 0 2px ${accentColor}60, 0 0 32px ${accentColor}50`,
               }}
@@ -551,7 +551,7 @@ function TierCard({ data }: { data: PublicProfileData }) {
             // haven't re-promoted. Same dimensions + accent treatment as
             // the leaderboard-photo tile so layout doesn't shift.
             <div
-              className="relative mx-auto h-32 w-32 flex-shrink-0 overflow-hidden rounded-sm sm:mx-0 sm:h-36 sm:w-36"
+              className="relative mx-auto h-32 w-32 flex-shrink-0 overflow-hidden rounded-control sm:mx-0 sm:h-36 sm:w-36"
               style={{
                 boxShadow: `0 0 0 2px ${accentColor}60, 0 0 32px ${accentColor}50`,
               }}
@@ -579,9 +579,8 @@ function TierCard({ data }: { data: PublicProfileData }) {
             // HAVE scanned). The tier letter dominates; the score reads
             // on the right column so we don't repeat it.
             <div
-              className="group relative mx-auto h-32 w-32 flex-shrink-0 overflow-hidden bg-black sm:mx-0 sm:h-36 sm:w-36"
+              className="group relative mx-auto h-32 w-32 flex-shrink-0 overflow-hidden rounded-control bg-black sm:mx-0 sm:h-36 sm:w-36"
               style={{
-                borderRadius: 2,
                 border: `2px solid ${accentColor}`,
                 boxShadow: `0 0 32px ${accentColor}55, inset 0 0 24px ${accentColor}25`,
               }}
@@ -635,7 +634,7 @@ function TierCard({ data }: { data: PublicProfileData }) {
               </span>
             </div>
           ) : (
-            <div className="mx-auto flex h-32 w-32 flex-col items-center justify-center gap-1 rounded-sm border border-white/10 bg-white/[0.02] sm:mx-0 sm:h-36 sm:w-36">
+            <div className="mx-auto flex h-32 w-32 flex-col items-center justify-center gap-1 rounded-control border border-white/10 bg-white/[0.02] sm:mx-0 sm:h-36 sm:w-36">
               <Scan size={20} className="text-zinc-500" aria-hidden />
               <span className="text-[11px] text-zinc-500">no scan yet</span>
             </div>
@@ -776,7 +775,7 @@ function StatChip({
         : 'text-white';
   return (
     <div
-      className="overflow-hidden rounded-sm border border-white/10 px-3 py-3"
+      className="overflow-hidden rounded-control border border-white/10 px-3 py-3"
       style={{
         background:
           'linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.015) 100%)',
@@ -814,9 +813,9 @@ function ClimbChart({
   const max = Math.max(...sparkline);
   const trend = sparkline[sparkline.length - 1] - sparkline[0];
   return (
-    <div className="rounded-sm">
+    <div className="rounded-panel">
       <section
-        className="relative overflow-hidden rounded-sm border border-white/20"
+        className="relative overflow-hidden rounded-panel border border-white/20"
         style={{
           background:
             'linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 60%)',
@@ -888,9 +887,9 @@ function BattleActivity({
 }) {
   const ordered = [...battles].reverse();
   return (
-    <div className="rounded-sm">
+    <div className="rounded-panel">
       <section
-        className="relative overflow-hidden rounded-sm border border-white/20"
+        className="relative overflow-hidden rounded-panel border border-white/20"
         style={{
           background:
             'linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 60%)',
@@ -911,14 +910,14 @@ function BattleActivity({
               <span
                 key={`pad-${i}`}
                 aria-hidden
-                className="h-2.5 flex-1 rounded-sm bg-white/[0.04]"
+                className="h-2.5 flex-1 rounded-control bg-white/[0.04]"
               />
             ))}
             {ordered.map((b) => (
               <span
                 key={b.battle_id}
                 title={b.is_winner ? 'win' : 'loss'}
-                className={`h-2.5 flex-1 rounded-sm ${
+                className={`h-2.5 flex-1 rounded-control ${
                   b.is_winner ? 'bg-emerald-400' : 'bg-rose-500/80'
                 }`}
               />
@@ -982,7 +981,7 @@ function BattleActivityRow({
     : {};
 
   return (
-    <li className="group overflow-hidden rounded-sm border border-white/[0.04] bg-white/[0.01] transition-colors hover:bg-white/[0.025]">
+    <li className="group overflow-hidden rounded-control border border-white/[0.04] bg-white/[0.01] transition-colors hover:bg-white/[0.025]">
       <button
         type="button"
         onClick={() => canExpand && setTapped((t) => !t)}
@@ -992,11 +991,10 @@ function BattleActivityRow({
         aria-expanded={canExpand ? tapped : undefined}
       >
         <span
-          className="inline-flex h-7 min-w-[28px] flex-shrink-0 items-center justify-center px-1.5 font-num text-[12px] font-bold tabular-nums"
+          className="inline-flex h-7 min-w-[28px] flex-shrink-0 items-center justify-center rounded-control px-1.5 font-num text-[12px] font-bold tabular-nums"
           style={{
             background: rankStyle.bg,
             color: rankStyle.text,
-            borderRadius: 2,
             border: `1px solid ${rankStyle.border}`,
           }}
           title={`${rank} of ${total}`}
@@ -1059,11 +1057,10 @@ function BattleActivityRow({
                 style={{ borderColor: placeStyle.border }}
               >
                 <span
-                  className="font-num inline-flex h-5 min-w-[20px] items-center justify-center px-1 text-[10px] font-bold tabular-nums"
+                  className="font-num inline-flex h-5 min-w-[20px] items-center justify-center rounded-control px-1 text-[10px] font-bold tabular-nums"
                   style={{
                     background: placeStyle.bg,
                     color: placeStyle.text,
-                    borderRadius: 2,
                   }}
                 >
                   {placeRank}
@@ -1154,9 +1151,9 @@ function CollectionShelf({ slugs }: { slugs: string[] }) {
   if (ownedFrames.length === 0 && ownedBadges.length === 0) return null;
 
   return (
-    <div className="rounded-sm">
+    <div className="rounded-panel">
       <section
-        className="relative overflow-hidden rounded-sm border border-white/20"
+        className="relative overflow-hidden rounded-panel border border-white/20"
         style={{
           background:
             'linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 60%)',
@@ -1212,7 +1209,7 @@ function CollectionShelf({ slugs }: { slugs: string[] }) {
                     <span
                       key={slug}
                       title={badge.description}
-                      className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.03] px-2.5 py-1 text-[12px] text-zinc-200"
+                      className="inline-flex items-center gap-1.5 rounded-control border border-white/10 bg-white/[0.03] px-2.5 py-1 text-[12px] text-zinc-200"
                     >
                       <Badge slug={slug} />
                       {badge.name}
@@ -1253,14 +1250,14 @@ function SocialPill({ kind, handle }: { kind: SocialKey; handle: string }) {
         href={url}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.03] px-2.5 py-1 text-[12px] transition-colors hover:bg-white/[0.07]"
+        className="inline-flex items-center gap-1.5 rounded-control border border-white/10 bg-white/[0.03] px-2.5 py-1 text-[12px] transition-colors hover:bg-white/[0.07]"
       >
         {inner}
       </a>
     );
   }
   return (
-    <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.03] px-2.5 py-1 text-[12px]">
+    <span className="inline-flex items-center gap-1.5 rounded-control border border-white/10 bg-white/[0.03] px-2.5 py-1 text-[12px]">
       {inner}
     </span>
   );

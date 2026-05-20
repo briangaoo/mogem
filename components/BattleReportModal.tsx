@@ -174,7 +174,7 @@ export function BattleReportModal({
             exit={{ y: 8, opacity: 0, scale: 0.97 }}
             transition={{ type: 'spring', stiffness: 320, damping: 28 }}
             onClick={(e) => e.stopPropagation()}
-            className="relative w-full max-w-sm overflow-hidden rounded-sm border border-white/15 bg-[#0c0c0c] p-6"
+            className="relative w-full max-w-sm overflow-hidden rounded-panel border border-white/15 bg-[#0c0c0c] p-6"
             style={{
               boxShadow:
                 'inset 0 1px 0 rgba(255,255,255,0.08), 0 30px 80px -20px rgba(0,0,0,0.7)',
@@ -223,7 +223,7 @@ export function BattleReportModal({
                   {REASONS.map((r) => (
                     <label
                       key={r.value}
-                      className={`flex cursor-pointer items-start gap-3 rounded-sm border px-3 py-2.5 transition-colors ${
+                      className={`flex cursor-pointer items-start gap-3 rounded-control border px-3 py-2.5 transition-colors ${
                         reason === r.value
                           ? 'border-white bg-white/[0.08]'
                           : 'border-white/10 bg-white/[0.02] hover:bg-white/[0.04]'
@@ -277,7 +277,7 @@ export function BattleReportModal({
                     }
                     rows={3}
                     placeholder="anything we should know"
-                    className="resize-none rounded-sm border border-white/10 bg-white/[0.02] px-3 py-2 text-[13px] text-white placeholder:text-zinc-600 focus:border-white focus:outline-none focus:ring-2 focus:ring-white/15"
+                    className="resize-none rounded-control border border-white/10 bg-white/[0.02] px-3 py-2 text-[13px] text-white placeholder:text-zinc-600 focus:border-white focus:outline-none focus:ring-2 focus:ring-white/15"
                   />
                   <span className="self-end text-[10px] tabular-nums text-zinc-600">
                     {details.length} / 1000
@@ -295,7 +295,7 @@ export function BattleReportModal({
                     type="button"
                     onClick={onClose}
                     style={{ touchAction: 'manipulation' }}
-                    className="h-11 flex-1 rounded-full border border-white/15 bg-white/[0.03] text-sm text-white hover:bg-white/[0.07]"
+                    className="h-11 flex-1 rounded-control border border-white/15 bg-white/[0.03] text-sm text-white hover:bg-white/[0.07]"
                   >
                     cancel
                   </button>
@@ -304,7 +304,7 @@ export function BattleReportModal({
                     onClick={submit}
                     disabled={!canSubmit || status === 'sending'}
                     style={{ touchAction: 'manipulation' }}
-                    className="inline-flex h-11 flex-1 items-center justify-center gap-2 rounded-full bg-white text-sm font-bold uppercase tracking-[0.18em] text-black transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-30"
+                    className="inline-flex h-11 flex-1 items-center justify-center gap-2 rounded-control bg-white text-sm font-bold uppercase tracking-[0.18em] text-black transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-30"
                   >
                     {status === 'sending' ? (
                       <>

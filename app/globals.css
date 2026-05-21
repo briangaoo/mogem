@@ -30,15 +30,15 @@
 
 /* Corner-radius system — brutalist, two tiers. Every non-circular
  * element picks exactly one:
- *   rounded-control (2px) — buttons, inputs, rows, chips, tiles,
+ *   rounded-control (4px) — buttons, inputs, rows, chips, tiles,
  *                           code cells, score cards, pips
- *   rounded-panel   (4px) — cards, modals, sheets, sections; any
+ *   rounded-panel   (8px) — cards, modals, sheets, sections; any
  *                           bordered container that holds controls
  * Circles (avatars, status dots, icon-only round buttons) keep
  * rounded-full. rounded-md / -lg / -xl are off-system — don't use. */
 @theme {
-  --radius-control: 2px;
-  --radius-panel: 4px;
+  --radius-control: 4px;
+  --radius-panel: 8px;
 }
 
 html,

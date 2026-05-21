@@ -202,7 +202,7 @@ export function AccountHistoryTab({
                 setResultFilter('all');
                 setOpponent('');
               }}
-              className="inline-flex items-center gap-1 rounded-control border border-white/10 bg-white/[0.03] px-2 py-1 text-[11px] text-zinc-300 hover:bg-white/[0.07] hover:text-white"
+              className="inline-flex items-center gap-1 rounded-button border border-white/10 bg-white/[0.03] px-2 py-1 text-[11px] text-zinc-300 hover:bg-white/[0.07] hover:text-white"
             >
               <X size={11} aria-hidden /> reset
             </button>
@@ -415,7 +415,7 @@ function FilterChip({
       type="button"
       onClick={onClick}
       style={{ touchAction: 'manipulation' }}
-      className={`rounded-control border-2 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] transition-colors ${
+      className={`rounded-button border-2 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] transition-colors ${
         active
           ? activeBorder
           : 'border-white/25 bg-black text-white/60 hover:border-white/50 hover:text-white'

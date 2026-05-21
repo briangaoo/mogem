@@ -311,7 +311,7 @@ function DataRow({
         type="button"
         onClick={onClick}
         disabled={pending || ok}
-        className="inline-flex shrink-0 items-center gap-1.5 rounded-control border border-white/10 bg-white/[0.03] px-3 py-2 text-[12px] font-medium text-zinc-200 transition-colors hover:bg-white/[0.07] hover:text-white disabled:cursor-not-allowed disabled:opacity-40"
+        className="inline-flex shrink-0 items-center gap-1.5 rounded-button border border-white/10 bg-white/[0.03] px-3 py-2 text-[12px] font-medium text-zinc-200 transition-colors hover:bg-white/[0.07] hover:text-white disabled:cursor-not-allowed disabled:opacity-40"
       >
         {pending ? (
           <Loader2 size={12} className="animate-spin" />
@@ -366,8 +366,8 @@ function DangerRow({
         disabled={isDisabled}
         className={
           variant === 'solid'
-            ? 'inline-flex shrink-0 items-center gap-1.5 rounded-control bg-red-500/90 px-3 py-2 text-[12px] font-semibold text-white transition-colors hover:bg-red-500 disabled:cursor-not-allowed disabled:opacity-40'
-            : 'inline-flex shrink-0 items-center gap-1.5 rounded-control border border-red-500/30 bg-red-500/[0.04] px-3 py-2 text-[12px] font-medium text-red-200 transition-colors hover:bg-red-500/[0.10] disabled:cursor-not-allowed disabled:opacity-40'
+            ? 'inline-flex shrink-0 items-center gap-1.5 rounded-button bg-red-500/90 px-3 py-2 text-[12px] font-semibold text-white transition-colors hover:bg-red-500 disabled:cursor-not-allowed disabled:opacity-40'
+            : 'inline-flex shrink-0 items-center gap-1.5 rounded-button border border-red-500/30 bg-red-500/[0.04] px-3 py-2 text-[12px] font-medium text-red-200 transition-colors hover:bg-red-500/[0.10] disabled:cursor-not-allowed disabled:opacity-40'
         }
       >
         {pending ? (

@@ -282,7 +282,7 @@ function MoreDetailLocked({ onSignIn }: { onSignIn?: () => void }) {
               type="button"
               onClick={onSignIn}
               style={{ touchAction: 'manipulation' }}
-              className="mt-1 rounded-control bg-white px-4 py-2 text-xs font-semibold text-black transition-colors hover:bg-zinc-100"
+              className="mt-1 rounded-button bg-white px-4 py-2 text-xs font-semibold text-black transition-colors hover:bg-zinc-100"
             >
               sign in / sign up
             </button>

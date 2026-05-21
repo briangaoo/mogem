@@ -180,7 +180,7 @@ export function AvatarUploader({ open, onClose, onSaved }: Props) {
             <button
               type="button"
               onClick={() => fileInputRef.current?.click()}
-              className="flex h-48 w-full flex-col items-center justify-center gap-3 rounded-control border-2 border-dashed border-white/15 bg-white/[0.02] text-sm text-white/70 transition-colors hover:border-white/25 hover:bg-white/[0.04]"
+              className="flex h-48 w-full flex-col items-center justify-center gap-3 rounded-button border-2 border-dashed border-white/15 bg-white/[0.02] text-sm text-white/70 transition-colors hover:border-white/25 hover:bg-white/[0.04]"
             >
               <ImagePlus size={24} aria-hidden />
               <span>Pick an image</span>
@@ -235,7 +235,7 @@ export function AvatarUploader({ open, onClose, onSaved }: Props) {
                 type="button"
                 onClick={() => fileInputRef.current?.click()}
                 disabled={saving}
-                className="flex h-11 flex-1 items-center justify-center gap-1.5 rounded-control border border-white/15 bg-white/[0.03] text-sm font-medium text-white transition-colors hover:bg-white/[0.07] disabled:opacity-50"
+                className="flex h-11 flex-1 items-center justify-center gap-1.5 rounded-button border border-white/15 bg-white/[0.03] text-sm font-medium text-white transition-colors hover:bg-white/[0.07] disabled:opacity-50"
               >
                 <ImagePlus size={14} aria-hidden /> Replace
               </button>
@@ -243,7 +243,7 @@ export function AvatarUploader({ open, onClose, onSaved }: Props) {
                 type="button"
                 onClick={onSave}
                 disabled={saving || !completedCrop}
-                className="flex h-11 flex-[2] items-center justify-center gap-2 rounded-control bg-white text-sm font-semibold text-black transition-colors hover:bg-zinc-100 disabled:opacity-50"
+                className="flex h-11 flex-[2] items-center justify-center gap-2 rounded-button bg-white text-sm font-semibold text-black transition-colors hover:bg-zinc-100 disabled:opacity-50"
               >
                 {saving ? (
                   <>

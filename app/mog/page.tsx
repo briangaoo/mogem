@@ -1014,7 +1014,7 @@ function JoinInput({
           type="button"
           onClick={onCancel}
           style={{ touchAction: 'manipulation' }}
-          className="inline-flex h-11 flex-1 items-center justify-center rounded-control border-2 border-white/30 bg-black text-xs font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:border-white hover:bg-white/[0.04]"
+          className="inline-flex h-11 flex-1 items-center justify-center rounded-button border-2 border-white/30 bg-black text-xs font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:border-white hover:bg-white/[0.04]"
         >
           CANCEL
         </button>
@@ -1022,7 +1022,7 @@ function JoinInput({
           type="submit"
           disabled={!valid}
           style={{ touchAction: 'manipulation' }}
-          className="inline-flex h-11 flex-[2] items-center justify-center gap-2 rounded-control bg-white text-xs font-bold uppercase tracking-[0.18em] text-black transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-30"
+          className="inline-flex h-11 flex-[2] items-center justify-center gap-2 rounded-button bg-white text-xs font-bold uppercase tracking-[0.18em] text-black transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-30"
         >
           {valid ? (
             <>
@@ -1359,7 +1359,7 @@ function Lobby({
             type="button"
             onClick={onCopy}
             style={{ touchAction: 'manipulation' }}
-            className="inline-flex h-11 items-center gap-2 rounded-control border border-white/20 bg-black/60 px-4 text-[13px] font-medium text-white transition-all duration-200 hover:border-white/50 hover:bg-white/[0.06] hover:shadow-[0_0_20px_-6px_rgba(255,255,255,0.4)]"
+            className="inline-flex h-11 items-center gap-2 rounded-button border border-white/20 bg-black/60 px-4 text-[13px] font-medium text-white transition-all duration-200 hover:border-white/50 hover:bg-white/[0.06] hover:shadow-[0_0_20px_-6px_rgba(255,255,255,0.4)]"
           >
             {copied ? (
               <>
@@ -1376,7 +1376,7 @@ function Lobby({
               type="button"
               onClick={onShare}
               style={{ touchAction: 'manipulation' }}
-              className="inline-flex h-11 items-center gap-2 rounded-control bg-white px-4 text-[13px] font-semibold text-black transition-all duration-200 hover:shadow-[0_0_28px_-4px_rgba(255,255,255,0.65)]"
+              className="inline-flex h-11 items-center gap-2 rounded-button bg-white px-4 text-[13px] font-semibold text-black transition-all duration-200 hover:shadow-[0_0_28px_-4px_rgba(255,255,255,0.65)]"
             >
               <Share2 size={14} aria-hidden /> Share
             </button>
@@ -1490,7 +1490,7 @@ function Lobby({
           type="button"
           onClick={onLeave}
           style={{ touchAction: 'manipulation' }}
-          className="inline-flex h-11 flex-1 items-center justify-center rounded-control border border-white/20 bg-black/60 text-[13px] font-medium text-white transition-all duration-200 hover:border-white/50 hover:bg-white/[0.05] hover:shadow-[0_0_20px_-6px_rgba(255,255,255,0.35)]"
+          className="inline-flex h-11 flex-1 items-center justify-center rounded-button border border-white/20 bg-black/60 text-[13px] font-medium text-white transition-all duration-200 hover:border-white/50 hover:bg-white/[0.05] hover:shadow-[0_0_20px_-6px_rgba(255,255,255,0.35)]"
         >
           Leave
         </button>
@@ -1500,7 +1500,7 @@ function Lobby({
             onClick={onStart}
             disabled={!canStart}
             style={{ touchAction: 'manipulation' }}
-            className="inline-flex h-11 flex-[2] items-center justify-center gap-2 rounded-control bg-white text-[13px] font-semibold text-black transition-all duration-200 hover:shadow-[0_0_36px_-4px_rgba(255,255,255,0.75)] disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:shadow-none"
+            className="inline-flex h-11 flex-[2] items-center justify-center gap-2 rounded-button bg-white text-[13px] font-semibold text-black transition-all duration-200 hover:shadow-[0_0_36px_-4px_rgba(255,255,255,0.75)] disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:shadow-none"
           >
             {starting ? (
               <>
@@ -1511,7 +1511,7 @@ function Lobby({
             )}
           </button>
         ) : (
-          <div className="inline-flex h-11 flex-[2] items-center justify-center rounded-control border border-white/10 bg-black/40 text-[13px] font-medium text-white/45">
+          <div className="inline-flex h-11 flex-[2] items-center justify-center rounded-button border border-white/10 bg-black/40 text-[13px] font-medium text-white/45">
             Waiting for host…
           </div>
         )}
@@ -1635,7 +1635,7 @@ function Joining({
             type="button"
             onClick={onError}
             style={{ touchAction: 'manipulation' }}
-            className="inline-flex h-11 flex-1 items-center justify-center rounded-control border-2 border-white/30 bg-black text-xs font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:border-white hover:bg-white/[0.04]"
+            className="inline-flex h-11 flex-1 items-center justify-center rounded-button border-2 border-white/30 bg-black text-xs font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:border-white hover:bg-white/[0.04]"
           >
             GO BACK
           </button>
@@ -1643,7 +1643,7 @@ function Joining({
             type="button"
             onClick={onTryAgain}
             style={{ touchAction: 'manipulation' }}
-            className="inline-flex h-11 flex-[1.2] items-center justify-center rounded-control bg-white text-xs font-bold uppercase tracking-[0.18em] text-black transition-opacity hover:opacity-90"
+            className="inline-flex h-11 flex-[1.2] items-center justify-center rounded-button bg-white text-xs font-bold uppercase tracking-[0.18em] text-black transition-opacity hover:opacity-90"
           >
             TRY AGAIN
           </button>

@@ -225,7 +225,7 @@ function EmailBlock({ email }: { email: string | null | undefined }) {
               type="button"
               onClick={onSendLink}
               disabled={!dirty || state.kind === 'pending'}
-              className="rounded-control bg-white px-4 py-2 text-[12px] font-semibold text-black transition-all hover:bg-zinc-100 hover:shadow-[0_0_0_2px_rgba(255,255,255,0.20)] disabled:opacity-40 disabled:hover:shadow-none"
+              className="rounded-button bg-white px-4 py-2 text-[12px] font-semibold text-black transition-all hover:bg-zinc-100 hover:shadow-[0_0_0_2px_rgba(255,255,255,0.20)] disabled:opacity-40 disabled:hover:shadow-none"
             >
               {state.kind === 'pending' ? 'sending…' : 'send link'}
             </button>
@@ -250,7 +250,7 @@ function EmailBlock({ email }: { email: string | null | undefined }) {
             type="button"
             onClick={onGoogleReAuth}
             disabled={state.kind === 'pending'}
-            className="inline-flex h-10 items-center justify-center gap-2 rounded-control border border-white/10 bg-white/[0.04] px-3 text-[13px] font-medium text-white transition-colors hover:bg-white/[0.08] disabled:opacity-40"
+            className="inline-flex h-10 items-center justify-center gap-2 rounded-button border border-white/10 bg-white/[0.04] px-3 text-[13px] font-medium text-white transition-colors hover:bg-white/[0.08] disabled:opacity-40"
           >
             open google · sign in with the new email
           </button>
@@ -537,7 +537,7 @@ function AuthMethodRow({
               type="button"
               onClick={onRemove}
               disabled={pending || isOnlyMethod}
-              className="rounded-control border border-white/10 bg-white/[0.03] px-3 py-1.5 text-[11px] text-zinc-200 transition-colors hover:bg-white/[0.07] hover:text-white disabled:cursor-not-allowed disabled:opacity-40"
+              className="rounded-button border border-white/10 bg-white/[0.03] px-3 py-1.5 text-[11px] text-zinc-200 transition-colors hover:bg-white/[0.07] hover:text-white disabled:cursor-not-allowed disabled:opacity-40"
             >
               {pending ? '…' : 'remove'}
             </button>
@@ -547,7 +547,7 @@ function AuthMethodRow({
             type="button"
             onClick={onAdd}
             disabled={pending}
-            className="rounded-control bg-foreground px-3 py-1.5 text-[11px] font-semibold text-background transition-colors hover:opacity-90 disabled:opacity-40"
+            className="rounded-button bg-foreground px-3 py-1.5 text-[11px] font-semibold text-background transition-colors hover:opacity-90 disabled:opacity-40"
           >
             {pending ? '…' : 'add'}
           </button>
@@ -637,7 +637,7 @@ function ActiveSessionsBlock() {
           <button
             type="button"
             onClick={onKickOthers}
-            className="rounded-control border border-red-500/30 bg-red-500/[0.06] px-2.5 py-1 text-[11px] font-medium text-red-200 transition-colors hover:bg-red-500/[0.12]"
+            className="rounded-button border border-red-500/30 bg-red-500/[0.06] px-2.5 py-1 text-[11px] font-medium text-red-200 transition-colors hover:bg-red-500/[0.12]"
           >
             kick others
           </button>
@@ -667,7 +667,7 @@ function ActiveSessionsBlock() {
               type="button"
               onClick={() => void onKick(s.id)}
               disabled={kicking === s.id}
-              className="rounded-control border border-red-500/30 bg-red-500/[0.04] px-3 py-1.5 text-[11px] text-red-200 transition-colors hover:bg-red-500/[0.10] disabled:opacity-40"
+              className="rounded-button border border-red-500/30 bg-red-500/[0.04] px-3 py-1.5 text-[11px] text-red-200 transition-colors hover:bg-red-500/[0.10] disabled:opacity-40"
             >
               {kicking === s.id ? 'kicking…' : 'kick'}
             </button>
@@ -825,7 +825,7 @@ function TwoFactorBlock({ initialEnabled }: { initialEnabled: boolean }) {
             type="button"
             onClick={startSetup}
             disabled={pending}
-            className="rounded-control bg-white px-4 py-2 text-[12px] font-semibold text-black transition-all hover:bg-zinc-100 hover:shadow-[0_0_0_2px_rgba(255,255,255,0.20)] disabled:opacity-40 disabled:hover:shadow-none"
+            className="rounded-button bg-white px-4 py-2 text-[12px] font-semibold text-black transition-all hover:bg-zinc-100 hover:shadow-[0_0_0_2px_rgba(255,255,255,0.20)] disabled:opacity-40 disabled:hover:shadow-none"
           >
             {pending ? 'starting…' : 'set up'}
           </button>
@@ -843,7 +843,7 @@ function TwoFactorBlock({ initialEnabled }: { initialEnabled: boolean }) {
             <TotpQrCode uri={setupUri} />
             <a
               href={setupUri}
-              className="inline-flex items-center gap-1.5 rounded-control border border-white/10 bg-white/[0.02] px-2.5 py-1.5 text-[11px] text-zinc-200 hover:bg-white/[0.06]"
+              className="inline-flex items-center gap-1.5 rounded-button border border-white/10 bg-white/[0.02] px-2.5 py-1.5 text-[11px] text-zinc-200 hover:bg-white/[0.06]"
             >
               <KeyRound size={11} aria-hidden /> open in authenticator app
             </a>
@@ -858,7 +858,7 @@ function TwoFactorBlock({ initialEnabled }: { initialEnabled: boolean }) {
                 <button
                   type="button"
                   onClick={copySecret}
-                  className="inline-flex items-center gap-1 rounded-control border border-white/10 bg-white/[0.03] px-2.5 py-1.5 text-[11px] text-zinc-200 hover:bg-white/[0.07]"
+                  className="inline-flex items-center gap-1 rounded-button border border-white/10 bg-white/[0.03] px-2.5 py-1.5 text-[11px] text-zinc-200 hover:bg-white/[0.07]"
                 >
                   <Copy size={11} aria-hidden /> copy
                 </button>
@@ -881,7 +881,7 @@ function TwoFactorBlock({ initialEnabled }: { initialEnabled: boolean }) {
               type="button"
               onClick={verifySetup}
               disabled={code.length !== 6 || pending}
-              className="rounded-control bg-white px-4 py-2 text-[12px] font-semibold text-black transition-all hover:bg-zinc-100 disabled:opacity-40"
+              className="rounded-button bg-white px-4 py-2 text-[12px] font-semibold text-black transition-all hover:bg-zinc-100 disabled:opacity-40"
             >
               {pending ? 'verifying…' : 'verify'}
             </button>
@@ -928,7 +928,7 @@ function TwoFactorBlock({ initialEnabled }: { initialEnabled: boolean }) {
               type="button"
               onClick={disable}
               disabled={pending}
-              className="inline-flex items-center gap-1.5 rounded-control border border-red-500/30 bg-red-500/[0.04] px-3 py-1.5 text-[11px] text-red-200 transition-colors hover:bg-red-500/[0.10] disabled:opacity-40"
+              className="inline-flex items-center gap-1.5 rounded-button border border-red-500/30 bg-red-500/[0.04] px-3 py-1.5 text-[11px] text-red-200 transition-colors hover:bg-red-500/[0.10] disabled:opacity-40"
             >
               <X size={11} aria-hidden /> disable
             </button>

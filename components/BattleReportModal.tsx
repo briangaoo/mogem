@@ -295,7 +295,7 @@ export function BattleReportModal({
                     type="button"
                     onClick={onClose}
                     style={{ touchAction: 'manipulation' }}
-                    className="h-11 flex-1 rounded-control border border-white/15 bg-white/[0.03] text-sm text-white hover:bg-white/[0.07]"
+                    className="h-11 flex-1 rounded-button border border-white/15 bg-white/[0.03] text-sm text-white hover:bg-white/[0.07]"
                   >
                     cancel
                   </button>
@@ -304,7 +304,7 @@ export function BattleReportModal({
                     onClick={submit}
                     disabled={!canSubmit || status === 'sending'}
                     style={{ touchAction: 'manipulation' }}
-                    className="inline-flex h-11 flex-1 items-center justify-center gap-2 rounded-control bg-white text-sm font-bold uppercase tracking-[0.18em] text-black transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-30"
+                    className="inline-flex h-11 flex-1 items-center justify-center gap-2 rounded-button bg-white text-sm font-bold uppercase tracking-[0.18em] text-black transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-30"
                   >
                     {status === 'sending' ? (
                       <>

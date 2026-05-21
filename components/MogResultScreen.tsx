@@ -404,7 +404,7 @@ export function MogResultScreen({
               type="button"
               onClick={() => setReportOpen(true)}
               style={{ touchAction: 'manipulation' }}
-              className="inline-flex items-center gap-1.5 rounded-control border border-white/20 bg-black px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/50 transition-colors hover:border-white hover:bg-white/[0.04] hover:text-white"
+              className="inline-flex items-center gap-1.5 rounded-button border border-white/20 bg-black px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/50 transition-colors hover:border-white hover:bg-white/[0.04] hover:text-white"
             >
               <Flag size={11} aria-hidden />
               report @{opponent.display_name}

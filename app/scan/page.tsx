@@ -1181,13 +1181,13 @@ function CompleteView({
           onClick={onShare}
           aria-label="Share your tier"
           style={{ touchAction: 'manipulation' }}
-          className="group relative flex h-14 w-full items-center justify-center gap-2 overflow-hidden rounded-control bg-white text-base font-semibold text-black shadow-[0_0_36px_-4px_rgba(255,255,255,0.55)] transition-all duration-300 hover:shadow-[0_0_48px_-2px_rgba(255,255,255,0.75)] active:bg-zinc-200"
+          className="group relative flex h-14 w-full items-center justify-center gap-2 overflow-hidden rounded-button bg-white text-base font-semibold text-black shadow-[0_0_36px_-4px_rgba(255,255,255,0.55)] transition-all duration-300 hover:shadow-[0_0_48px_-2px_rgba(255,255,255,0.75)] active:bg-zinc-200"
         >
           {/* Pulsing halo behind the button — draws the eye to the
               primary "next action" after a scan reveal lands. */}
           <span
             aria-hidden
-            className="pointer-events-none absolute inset-0 -z-10 animate-pulse rounded-control bg-white/30 blur-2xl"
+            className="pointer-events-none absolute inset-0 -z-10 animate-pulse rounded-button bg-white/30 blur-2xl"
           />
           <Share2
             size={18}
@@ -1203,7 +1203,7 @@ function CompleteView({
             onClick={onRetake}
             aria-label={retakeLocked ? 'Sign in to scan again' : 'Retake photo'}
             style={{ touchAction: 'manipulation' }}
-            className="flex h-11 items-center justify-center gap-1.5 rounded-control border border-white/15 bg-white/[0.03] text-xs font-medium text-white transition-colors hover:bg-white/[0.07] active:bg-white/[0.1]"
+            className="flex h-11 items-center justify-center gap-1.5 rounded-button border border-white/15 bg-white/[0.03] text-xs font-medium text-white transition-colors hover:bg-white/[0.07] active:bg-white/[0.1]"
           >
             {retakeLocked ? (
               <>
@@ -1221,7 +1221,7 @@ function CompleteView({
             href="/"
             aria-label="Go home"
             style={{ touchAction: 'manipulation' }}
-            className="flex h-11 items-center justify-center gap-1.5 rounded-control border border-white/15 bg-white/[0.03] text-xs font-medium text-white transition-colors hover:bg-white/[0.07] active:bg-white/[0.1]"
+            className="flex h-11 items-center justify-center gap-1.5 rounded-button border border-white/15 bg-white/[0.03] text-xs font-medium text-white transition-colors hover:bg-white/[0.07] active:bg-white/[0.1]"
           >
             <HomeIcon size={14} aria-hidden />
             home
@@ -1230,7 +1230,7 @@ function CompleteView({
             href="/account"
             aria-label="Go to account"
             style={{ touchAction: 'manipulation' }}
-            className="flex h-11 items-center justify-center gap-1.5 rounded-control border border-white/15 bg-white/[0.03] text-xs font-medium text-white transition-colors hover:bg-white/[0.07] active:bg-white/[0.1]"
+            className="flex h-11 items-center justify-center gap-1.5 rounded-button border border-white/15 bg-white/[0.03] text-xs font-medium text-white transition-colors hover:bg-white/[0.07] active:bg-white/[0.1]"
           >
             <UserRound size={14} aria-hidden />
             account
@@ -1299,7 +1299,7 @@ function ScanPaywall({
             type="button"
             onClick={onSignIn}
             style={{ touchAction: 'manipulation' }}
-            className="inline-flex h-12 items-center justify-center rounded-control bg-white px-5 text-sm font-semibold text-black transition-colors hover:bg-zinc-100"
+            className="inline-flex h-12 items-center justify-center rounded-button bg-white px-5 text-sm font-semibold text-black transition-colors hover:bg-zinc-100"
           >
             Sign in / Sign up
           </button>
@@ -1307,7 +1307,7 @@ function ScanPaywall({
         <Link
           href="/"
           style={{ touchAction: 'manipulation' }}
-          className="inline-flex h-11 items-center justify-center rounded-control border border-white/15 bg-white/[0.03] px-5 text-xs font-medium text-zinc-300 transition-colors hover:bg-white/[0.07] hover:text-white"
+          className="inline-flex h-11 items-center justify-center rounded-button border border-white/15 bg-white/[0.03] px-5 text-xs font-medium text-zinc-300 transition-colors hover:bg-white/[0.07] hover:text-white"
         >
           Go home
         </Link>

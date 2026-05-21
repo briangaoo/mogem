@@ -103,7 +103,7 @@ export function RecordScanModal({ open, overall, isFirst, onYes, onNo }: Props) 
                 type="button"
                 onClick={onNo}
                 style={{ touchAction: 'manipulation' }}
-                className="inline-flex h-11 flex-1 items-center justify-center rounded-control border-2 border-white/30 bg-black text-xs font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:border-white hover:bg-white/[0.04]"
+                className="inline-flex h-11 flex-1 items-center justify-center rounded-button border-2 border-white/30 bg-black text-xs font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:border-white hover:bg-white/[0.04]"
               >
                 NOT NOW
               </button>
@@ -111,7 +111,7 @@ export function RecordScanModal({ open, overall, isFirst, onYes, onNo }: Props) 
                 type="button"
                 onClick={onYes}
                 style={{ touchAction: 'manipulation' }}
-                className="inline-flex h-11 flex-[1.4] items-center justify-center gap-1.5 rounded-control bg-white text-xs font-bold uppercase tracking-[0.18em] text-black transition-opacity hover:opacity-90"
+                className="inline-flex h-11 flex-[1.4] items-center justify-center gap-1.5 rounded-button bg-white text-xs font-bold uppercase tracking-[0.18em] text-black transition-opacity hover:opacity-90"
               >
                 <Trophy size={12} aria-hidden /> ADD TO BOARD
               </button>

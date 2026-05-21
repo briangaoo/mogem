@@ -819,7 +819,7 @@ export function AdminConsole({ adminUserId }: { adminUserId: string }) {
               <button
                 type="submit"
                 disabled={searching || !query.trim()}
-                className="inline-flex h-11 items-center gap-1.5 rounded-control bg-white px-4 text-[13px] font-semibold text-black transition-colors hover:bg-zinc-200 disabled:cursor-not-allowed disabled:opacity-40"
+                className="inline-flex h-11 items-center gap-1.5 rounded-button bg-white px-4 text-[13px] font-semibold text-black transition-colors hover:bg-zinc-200 disabled:cursor-not-allowed disabled:opacity-40"
               >
                 {searching ? (
                   <Loader2 size={14} className="animate-spin" />
@@ -1065,7 +1065,7 @@ export function AdminConsole({ adminUserId }: { adminUserId: string }) {
                             type="button"
                             onClick={() => onDeleteScan(scan.id)}
                             disabled={pending}
-                            className="inline-flex h-7 w-7 items-center justify-center rounded-control text-zinc-500 transition-colors hover:bg-rose-500/15 hover:text-rose-300 disabled:cursor-not-allowed disabled:opacity-40"
+                            className="inline-flex h-7 w-7 items-center justify-center rounded-button text-zinc-500 transition-colors hover:bg-rose-500/15 hover:text-rose-300 disabled:cursor-not-allowed disabled:opacity-40"
                             aria-label={`Delete scan ${scan.id}`}
                           >
                             {pending ? (
@@ -1174,7 +1174,7 @@ function AdminTabButton({
       type="button"
       onClick={onClick}
       style={{ touchAction: 'manipulation' }}
-      className={`relative inline-flex h-10 items-center gap-1.5 rounded-control px-3 text-[13px] font-medium transition-colors ${
+      className={`relative inline-flex h-10 items-center gap-1.5 rounded-button px-3 text-[13px] font-medium transition-colors ${
         active
           ? 'bg-zinc-900 text-white'
           : 'text-zinc-400 hover:bg-zinc-900/60 hover:text-zinc-100'
@@ -1352,7 +1352,7 @@ function AdminGhostButton({
       onClick={onClick}
       disabled={disabled}
       style={{ touchAction: 'manipulation' }}
-      className={`inline-flex h-9 items-center gap-1.5 rounded-control border px-3 text-[12px] font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-40 ${accentClass}`}
+      className={`inline-flex h-9 items-center gap-1.5 rounded-button border px-3 text-[12px] font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-40 ${accentClass}`}
     >
       {icon}
       {children}
@@ -1382,7 +1382,7 @@ function AdminPrimaryButton({
       onClick={onClick}
       disabled={disabled}
       style={{ touchAction: 'manipulation' }}
-      className={`inline-flex h-9 items-center gap-1.5 rounded-control px-3 text-[12px] font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-40 ${toneClass}`}
+      className={`inline-flex h-9 items-center gap-1.5 rounded-button px-3 text-[12px] font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-40 ${toneClass}`}
     >
       {icon}
       {children}
@@ -1412,7 +1412,7 @@ function AdminDangerButton({
       onClick={onClick}
       disabled={disabled}
       style={{ touchAction: 'manipulation' }}
-      className={`inline-flex h-9 items-center gap-1.5 rounded-control px-3 text-[12px] font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-40 ${variantClass}`}
+      className={`inline-flex h-9 items-center gap-1.5 rounded-button px-3 text-[12px] font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-40 ${variantClass}`}
     >
       {icon}
       {children}

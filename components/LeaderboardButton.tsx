@@ -28,7 +28,7 @@ export function LeaderboardButton({ onClick, accent }: Props) {
       transition={{ duration: 0.3, ease: 'easeOut' }}
       whileHover={{ scale: 1.04 }}
       whileTap={{ scale: 0.97 }}
-      className="inline-flex items-center justify-center gap-2 rounded-full border bg-white/[0.03] px-4 py-2 text-xs font-medium tracking-wide transition-colors hover:bg-white/[0.06]"
+      className="inline-flex items-center justify-center gap-2 rounded-button border bg-white/[0.03] px-4 py-2 text-xs font-medium tracking-wide transition-colors hover:bg-white/[0.06]"
     >
       <Trophy size={14} aria-hidden />
       add your score to the leaderboard

@@ -138,7 +138,7 @@ export function PrivacyModal({ open, onAcknowledge }: Props) {
               onClick={() => setAccepted((v) => !v)}
               aria-pressed={accepted}
               style={{ touchAction: 'manipulation' }}
-              className={`mt-5 flex w-full items-start gap-3 rounded-control border px-3.5 py-3 text-left transition-colors ${
+              className={`mt-5 flex w-full items-start gap-3 rounded-button border px-3.5 py-3 text-left transition-colors ${
                 accepted
                   ? 'border-white bg-white/[0.08]'
                   : 'border-white/10 bg-white/[0.02] hover:bg-white/[0.04]'
@@ -200,7 +200,7 @@ export function PrivacyModal({ open, onAcknowledge }: Props) {
               disabled={!accepted}
               aria-label="Accept and continue"
               style={{ touchAction: 'manipulation' }}
-              className="mt-3 h-12 w-full rounded-control bg-white text-sm font-semibold text-black transition-colors hover:bg-zinc-100 active:bg-zinc-200 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-white"
+              className="mt-3 h-12 w-full rounded-button bg-white text-sm font-semibold text-black transition-colors hover:bg-zinc-100 active:bg-zinc-200 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-white"
             >
               {accepted ? 'Accept & continue' : 'Check the box to continue'}
             </button>

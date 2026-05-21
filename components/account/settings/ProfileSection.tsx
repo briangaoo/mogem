@@ -418,7 +418,7 @@ export function ProfileSection({
                   onClick={onUsernameCancel}
                   disabled={usernameSaving}
                   aria-label="cancel"
-                  className="inline-flex w-10 shrink-0 items-center justify-center rounded-control border border-white/10 bg-white/[0.03] text-zinc-300 transition-colors hover:bg-white/[0.07] disabled:opacity-50"
+                  className="inline-flex w-10 shrink-0 items-center justify-center rounded-button border border-white/10 bg-white/[0.03] text-zinc-300 transition-colors hover:bg-white/[0.07] disabled:opacity-50"
                 >
                   <X size={14} aria-hidden />
                 </button>
@@ -426,7 +426,7 @@ export function ProfileSection({
                   type="button"
                   onClick={onUsernameSave}
                   disabled={usernameSaving || !usernameDraft.trim()}
-                  className="inline-flex shrink-0 items-center gap-1.5 rounded-control bg-foreground px-3 text-[13px] font-semibold text-background transition-all hover:opacity-90 hover:shadow-[0_0_0_2px_rgba(255,255,255,0.20)] disabled:opacity-50 disabled:hover:shadow-none"
+                  className="inline-flex shrink-0 items-center gap-1.5 rounded-button bg-foreground px-3 text-[13px] font-semibold text-background transition-all hover:opacity-90 hover:shadow-[0_0_0_2px_rgba(255,255,255,0.20)] disabled:opacity-50 disabled:hover:shadow-none"
                 >
                   {usernameSaving ? (
                     <>
@@ -465,7 +465,7 @@ export function ProfileSection({
                 type="button"
                 onClick={onUsernameEnter}
                 aria-label="change username"
-                className="inline-flex shrink-0 items-center gap-1.5 rounded-control border border-white/10 bg-white/[0.03] px-3 py-2 text-[13px] text-zinc-200 transition-colors hover:bg-white/[0.07] hover:text-foreground"
+                className="inline-flex shrink-0 items-center gap-1.5 rounded-button border border-white/10 bg-white/[0.03] px-3 py-2 text-[13px] text-zinc-200 transition-colors hover:bg-white/[0.07] hover:text-foreground"
               >
                 <Pencil size={13} aria-hidden /> change
               </button>
@@ -572,7 +572,7 @@ export function ProfileSection({
           onClick={onSave}
           disabled={!dirty || state.kind === 'pending'}
           style={{ touchAction: 'manipulation' }}
-          className="rounded-control bg-foreground px-5 py-2.5 text-[13px] font-semibold text-background transition-all hover:opacity-90 hover:shadow-[0_0_0_2px_rgba(255,255,255,0.2)] disabled:opacity-40 disabled:hover:shadow-none"
+          className="rounded-button bg-foreground px-5 py-2.5 text-[13px] font-semibold text-background transition-all hover:opacity-90 hover:shadow-[0_0_0_2px_rgba(255,255,255,0.2)] disabled:opacity-40 disabled:hover:shadow-none"
         >
           {state.kind === 'pending' ? 'saving…' : 'save'}
         </button>

@@ -344,8 +344,8 @@ function FollowButton({
       style={{ touchAction: 'manipulation' }}
       className={
         following
-          ? 'inline-flex h-9 items-center rounded-control border border-white/15 bg-transparent px-4 text-[14px] font-semibold text-foreground transition-colors hover:border-white hover:bg-white/[0.06] hover:text-white disabled:opacity-50'
-          : 'inline-flex h-9 items-center rounded-control bg-foreground px-4 text-[14px] font-semibold text-[#0a0a0a] transition-transform hover:scale-[1.03] disabled:opacity-50'
+          ? 'inline-flex h-9 items-center rounded-button border border-white/15 bg-transparent px-4 text-[14px] font-semibold text-foreground transition-colors hover:border-white hover:bg-white/[0.06] hover:text-white disabled:opacity-50'
+          : 'inline-flex h-9 items-center rounded-button bg-foreground px-4 text-[14px] font-semibold text-[#0a0a0a] transition-transform hover:scale-[1.03] disabled:opacity-50'
       }
     >
       {following ? 'following' : 'follow'}
@@ -357,7 +357,7 @@ function EditProfileButton() {
   return (
     <Link
       href="/account"
-      className="inline-flex h-9 items-center rounded-control border border-white/15 bg-transparent px-4 text-[14px] font-semibold text-foreground transition-colors hover:bg-white/[0.06]"
+      className="inline-flex h-9 items-center rounded-button border border-white/15 bg-transparent px-4 text-[14px] font-semibold text-foreground transition-colors hover:bg-white/[0.06]"
     >
       edit profile
     </Link>

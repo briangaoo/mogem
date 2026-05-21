@@ -275,7 +275,7 @@ export function ShareSheet({ open, onClose, scores, capturedImage }: Props) {
                 onClick={nativeShare}
                 aria-label="Share via system share sheet"
                 style={{ touchAction: 'manipulation' }}
-                className="mb-4 flex h-12 w-full items-center justify-center gap-2 rounded-control bg-white text-sm font-semibold text-black transition-all duration-200 hover:shadow-[0_0_28px_-4px_rgba(255,255,255,0.6)] active:bg-zinc-200"
+                className="mb-4 flex h-12 w-full items-center justify-center gap-2 rounded-button bg-white text-sm font-semibold text-black transition-all duration-200 hover:shadow-[0_0_28px_-4px_rgba(255,255,255,0.6)] active:bg-zinc-200"
               >
                 <Share2 size={16} aria-hidden />
                 Share
@@ -290,7 +290,7 @@ export function ShareSheet({ open, onClose, scores, capturedImage }: Props) {
                   onClick={p.onClick}
                   aria-label={p.ariaLabel}
                   style={{ touchAction: 'manipulation' }}
-                  className="flex flex-col items-center gap-1.5 rounded-control pt-4 pb-2 transition-colors hover:bg-white/5 active:bg-white/10"
+                  className="flex flex-col items-center gap-1.5 rounded-button pt-4 pb-2 transition-colors hover:bg-white/5 active:bg-white/10"
                 >
                   <PlatformTile p={p} />
                   <span className="text-[11px] text-zinc-400">
@@ -306,7 +306,7 @@ export function ShareSheet({ open, onClose, scores, capturedImage }: Props) {
                 onClick={() => copyImage()}
                 aria-label="Copy share image"
                 style={{ touchAction: 'manipulation' }}
-                className="flex items-center justify-center gap-2 rounded-control border border-white/10 bg-white/[0.03] px-3 py-3 text-sm text-white transition-colors hover:bg-white/[0.07] active:bg-white/[0.1]"
+                className="flex items-center justify-center gap-2 rounded-button border border-white/10 bg-white/[0.03] px-3 py-3 text-sm text-white transition-colors hover:bg-white/[0.07] active:bg-white/[0.1]"
               >
                 <Copy size={14} aria-hidden /> Copy Image
               </button>
@@ -315,7 +315,7 @@ export function ShareSheet({ open, onClose, scores, capturedImage }: Props) {
                 onClick={copyLink}
                 aria-label="Copy link"
                 style={{ touchAction: 'manipulation' }}
-                className="flex items-center justify-center gap-2 rounded-control border border-white/10 bg-white/[0.03] px-3 py-3 text-sm text-white transition-colors hover:bg-white/[0.07] active:bg-white/[0.1]"
+                className="flex items-center justify-center gap-2 rounded-button border border-white/10 bg-white/[0.03] px-3 py-3 text-sm text-white transition-colors hover:bg-white/[0.07] active:bg-white/[0.1]"
               >
                 <LinkIcon size={14} aria-hidden /> Copy Link
               </button>

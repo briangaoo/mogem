@@ -167,7 +167,7 @@ export function ConfirmModal({
                 type="button"
                 onClick={onCancel}
                 disabled={busy}
-                className="h-10 rounded-control border border-white/15 bg-white/[0.03] px-4 text-sm text-white transition-colors hover:bg-white/[0.07] disabled:opacity-50"
+                className="h-10 rounded-button border border-white/15 bg-white/[0.03] px-4 text-sm text-white transition-colors hover:bg-white/[0.07] disabled:opacity-50"
               >
                 {cancelLabel}
               </button>
@@ -175,7 +175,7 @@ export function ConfirmModal({
                 type="button"
                 onClick={handleConfirm}
                 disabled={busy || !valid}
-                className={`h-10 rounded-control px-4 text-sm font-semibold transition-colors ${
+                className={`h-10 rounded-button px-4 text-sm font-semibold transition-colors ${
                   danger
                     ? 'bg-red-500 text-white hover:bg-red-400'
                     : 'bg-foreground text-background hover:opacity-90'

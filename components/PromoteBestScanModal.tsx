@@ -185,7 +185,7 @@ export function PromoteBestScanModal({
               type="button"
               onClick={() => setIncludePhoto((v) => !v)}
               aria-pressed={includePhoto}
-              className="mb-5 flex w-full items-start gap-3 rounded-control border border-white/15 bg-white/[0.02] px-3 py-3 text-left transition-colors hover:bg-white/[0.05]"
+              className="mb-5 flex w-full items-start gap-3 rounded-button border border-white/15 bg-white/[0.02] px-3 py-3 text-left transition-colors hover:bg-white/[0.05]"
               style={{ touchAction: 'manipulation' }}
             >
               <span
@@ -221,7 +221,7 @@ export function PromoteBestScanModal({
                 onClick={onClose}
                 disabled={status === 'submitting'}
                 style={{ touchAction: 'manipulation' }}
-                className="inline-flex h-11 flex-1 items-center justify-center rounded-control border-2 border-white/30 bg-black text-xs font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:border-white hover:bg-white/[0.04] disabled:opacity-40"
+                className="inline-flex h-11 flex-1 items-center justify-center rounded-button border-2 border-white/30 bg-black text-xs font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:border-white hover:bg-white/[0.04] disabled:opacity-40"
               >
                 Not now
               </button>
@@ -230,7 +230,7 @@ export function PromoteBestScanModal({
                 onClick={submit}
                 disabled={status === 'submitting'}
                 style={{ touchAction: 'manipulation' }}
-                className="inline-flex h-11 flex-[1.4] items-center justify-center gap-1.5 rounded-control bg-white text-xs font-bold uppercase tracking-[0.18em] text-black transition-opacity hover:opacity-90 disabled:opacity-40"
+                className="inline-flex h-11 flex-[1.4] items-center justify-center gap-1.5 rounded-button bg-white text-xs font-bold uppercase tracking-[0.18em] text-black transition-opacity hover:opacity-90 disabled:opacity-40"
               >
                 {status === 'submitting' ? (
                   <>

@@ -42,7 +42,7 @@ export function ImpersonationExitButton() {
       type="button"
       onClick={onExit}
       disabled={pending}
-      className="flex flex-shrink-0 items-center gap-1.5 rounded-control border-2 border-white bg-white px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-black transition-colors hover:bg-white/90 disabled:opacity-40"
+      className="flex flex-shrink-0 items-center gap-1.5 rounded-button border-2 border-white bg-white px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-black transition-colors hover:bg-white/90 disabled:opacity-40"
     >
       {pending ? (
         <Loader2 size={11} className="animate-spin" />

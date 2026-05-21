@@ -28,16 +28,18 @@
   --font-mono: var(--font-mono-numeric);
 }
 
-/* Corner-radius system — brutalist, two tiers. Every non-circular
- * element picks exactly one:
- *   rounded-control (4px) — buttons, inputs, rows, chips, tiles,
- *                           code cells, score cards, pips
+/* Corner-radius system — three tiers. Every non-circular element
+ * picks exactly one:
+ *   rounded-control (4px) — inputs, rows, chips, tiles, code cells,
+ *                           score cards, pips, banners
+ *   rounded-button  (8px) — every button + button-styled link
  *   rounded-panel   (8px) — cards, modals, sheets, sections; any
  *                           bordered container that holds controls
  * Circles (avatars, status dots, icon-only round buttons) keep
  * rounded-full. rounded-md / -lg / -xl are off-system — don't use. */
 @theme {
   --radius-control: 4px;
+  --radius-button: 8px;
   --radius-panel: 8px;
 }
 

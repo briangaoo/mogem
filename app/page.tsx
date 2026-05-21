@@ -66,7 +66,7 @@ export default function HomePage() {
 
           <Link
             href="/leaderboard"
-            className="group relative flex items-center justify-between gap-3 overflow-hidden rounded-control border border-white/20 bg-white/[0.02] px-5 py-4 text-sm text-white transition-all duration-300 hover:border-white/60 hover:bg-white/[0.05] hover:shadow-[0_0_32px_-4px_rgba(255,255,255,0.35),inset_0_1px_0_0_rgba(255,255,255,0.08)]"
+            className="group relative flex items-center justify-between gap-3 overflow-hidden rounded-button border border-white/20 bg-white/[0.02] px-5 py-4 text-sm text-white transition-all duration-300 hover:border-white/60 hover:bg-white/[0.05] hover:shadow-[0_0_32px_-4px_rgba(255,255,255,0.35),inset_0_1px_0_0_rgba(255,255,255,0.08)]"
             style={{ touchAction: 'manipulation' }}
           >
             <span className="flex items-center gap-2.5">

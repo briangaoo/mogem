@@ -266,7 +266,7 @@ export function LeaderboardModal({
                   type="button"
                   onClick={() => setIncludePhoto((v) => !v)}
                   aria-pressed={includePhoto}
-                  className="mb-3 flex w-full items-center gap-3 rounded-control border border-white/10 bg-white/[0.02] px-3 py-3 text-left transition-colors hover:bg-white/[0.05]"
+                  className="mb-3 flex w-full items-center gap-3 rounded-button border border-white/10 bg-white/[0.02] px-3 py-3 text-left transition-colors hover:bg-white/[0.05]"
                   style={{ touchAction: 'manipulation' }}
                 >
                   <span
@@ -349,7 +349,7 @@ export function LeaderboardModal({
                   onClick={() => setScanDataConsent((v) => !v)}
                   aria-pressed={scanDataConsent}
                   style={{ touchAction: 'manipulation' }}
-                  className={`mb-3 flex w-full items-start gap-3 rounded-control border px-3 py-3 text-left transition-colors ${
+                  className={`mb-3 flex w-full items-start gap-3 rounded-button border px-3 py-3 text-left transition-colors ${
                     scanDataConsent
                       ? 'border-white bg-white/[0.08]'
                       : 'border-white/10 bg-white/[0.02]'
@@ -435,7 +435,7 @@ export function LeaderboardModal({
                     type="button"
                     onClick={onClose}
                     style={{ touchAction: 'manipulation' }}
-                    className="h-11 flex-1 rounded-control border border-white/15 bg-white/[0.03] text-sm text-white hover:bg-white/[0.07]"
+                    className="h-11 flex-1 rounded-button border border-white/15 bg-white/[0.03] text-sm text-white hover:bg-white/[0.07]"
                   >
                     Cancel
                   </button>
@@ -444,7 +444,7 @@ export function LeaderboardModal({
                     onClick={submit}
                     disabled={submitDisabled}
                     style={{ touchAction: 'manipulation' }}
-                    className="h-11 flex-1 rounded-control bg-white text-sm font-semibold text-black transition-colors hover:bg-zinc-100 disabled:opacity-50"
+                    className="h-11 flex-1 rounded-button bg-white text-sm font-semibold text-black transition-colors hover:bg-zinc-100 disabled:opacity-50"
                   >
                     {status.kind === 'submitting' ? 'saving…' : submitLabel}
                   </button>

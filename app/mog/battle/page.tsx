@@ -560,7 +560,7 @@ function PublicMatchmaking({
           top: 'max(env(safe-area-inset-top), 16px)',
           right: 'max(env(safe-area-inset-right), 16px)',
         }}
-        className="absolute z-10 inline-flex h-11 items-center gap-1.5 rounded-control border-2 border-white/40 bg-black px-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:border-white hover:bg-white/[0.04]"
+        className="absolute z-10 inline-flex h-11 items-center gap-1.5 rounded-button border-2 border-white/40 bg-black px-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:border-white hover:bg-white/[0.04]"
       >
         <X size={12} aria-hidden /> CANCEL
       </button>
@@ -590,7 +590,7 @@ function PublicMatchmaking({
                 type="button"
                 onClick={onCancel}
                 style={{ touchAction: 'manipulation' }}
-                className="inline-flex h-11 flex-1 items-center justify-center rounded-control border-2 border-white/30 bg-black text-xs font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:border-white hover:bg-white/[0.04]"
+                className="inline-flex h-11 flex-1 items-center justify-center rounded-button border-2 border-white/30 bg-black text-xs font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:border-white hover:bg-white/[0.04]"
               >
                 GO BACK
               </button>
@@ -598,7 +598,7 @@ function PublicMatchmaking({
                 type="button"
                 onClick={onRetryHandoff}
                 style={{ touchAction: 'manipulation' }}
-                className="inline-flex h-11 flex-[1.2] items-center justify-center rounded-control bg-white text-xs font-bold uppercase tracking-[0.18em] text-black transition-opacity hover:opacity-90"
+                className="inline-flex h-11 flex-[1.2] items-center justify-center rounded-button bg-white text-xs font-bold uppercase tracking-[0.18em] text-black transition-opacity hover:opacity-90"
               >
                 TRY AGAIN
               </button>

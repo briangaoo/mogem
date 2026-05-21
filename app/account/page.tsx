@@ -288,7 +288,7 @@ function AccountPageInner() {
           {prefetched.me?.profile?.display_name && (
             <Link
               href={`/@${prefetched.me.profile.display_name}`}
-              className="ml-auto rounded-control border border-white/20 bg-black/40 px-3 py-2 text-[12px] font-medium text-white/80 transition-all duration-200 hover:border-white/40 hover:bg-white/[0.05] hover:text-white"
+              className="ml-auto rounded-button border border-white/20 bg-black/40 px-3 py-2 text-[12px] font-medium text-white/80 transition-all duration-200 hover:border-white/40 hover:bg-white/[0.05] hover:text-white"
             >
               View public profile
             </Link>

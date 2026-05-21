@@ -256,7 +256,7 @@ export function AuthModal({ open, onClose, context, next }: Props) {
                       type="button"
                       onClick={() => setEmailMode(true)}
                       style={{ touchAction: 'manipulation' }}
-                      className="flex h-12 w-full items-center justify-center gap-2 rounded-control border border-white/15 bg-white/[0.04] text-sm font-medium text-white transition-colors hover:bg-white/[0.08]"
+                      className="flex h-12 w-full items-center justify-center gap-2 rounded-button border border-white/15 bg-white/[0.04] text-sm font-medium text-white transition-colors hover:bg-white/[0.08]"
                     >
                       <Mail size={14} aria-hidden /> Email me a link
                     </button>
@@ -279,7 +279,7 @@ export function AuthModal({ open, onClose, context, next }: Props) {
                         onClick={sendMagicLink}
                         disabled={status === 'sending'}
                         style={{ touchAction: 'manipulation' }}
-                        className="h-11 rounded-control bg-white text-sm font-semibold text-black transition-colors hover:bg-zinc-100 disabled:opacity-50"
+                        className="h-11 rounded-button bg-white text-sm font-semibold text-black transition-colors hover:bg-zinc-100 disabled:opacity-50"
                       >
                         {status === 'sending' ? 'Sending…' : 'Send link'}
                       </button>
@@ -364,7 +364,7 @@ function ProviderButton({
     return (
       <div
         aria-disabled="true"
-        className={`relative flex h-12 w-full cursor-not-allowed items-center justify-center gap-3 rounded-control text-sm font-semibold opacity-50 ${baseColors}`}
+        className={`relative flex h-12 w-full cursor-not-allowed items-center justify-center gap-3 rounded-button text-sm font-semibold opacity-50 ${baseColors}`}
       >
         {icon}
         <span>{label}</span>
@@ -380,7 +380,7 @@ function ProviderButton({
       type="button"
       onClick={onClick}
       style={{ touchAction: 'manipulation' }}
-      className={`flex h-12 w-full items-center justify-center gap-3 rounded-control text-sm font-semibold shadow-md transition-colors ${baseColors} ${enabledHover}`}
+      className={`flex h-12 w-full items-center justify-center gap-3 rounded-button text-sm font-semibold shadow-md transition-colors ${baseColors} ${enabledHover}`}
     >
       {icon}
       {label}
